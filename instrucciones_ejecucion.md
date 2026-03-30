@@ -130,31 +130,34 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 
 ## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
-- Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal la IP asignada con el siguiente comando:
+- **Paso 0.** En la terminal de la máquina virtual BIGDATA verificar en la terminal la IP asignada con el siguiente comando:
 	```bash 
 	hostname -I
 	```
-	Ejemplo: se tiene como respuesta la `IP = 192.168.0.17`
+	Ejemplo: se tiene como respuesta la `IP = 192.168.0.17`\
 	**Nota:** Usar la IP para iniciar sesión en PuTTY mediante SSH
 		
-- Paso 1. Iniciar una sesión PuTTY desde el ejecutable
-		1. En la ventana PuTTY Configuration agregar la IP de la máquina virtual 
-		   Ubuntu Server en el campo Host Name (or IP address)
-		   Por ejemplo, para la práctica actual se uso IP = 192.168.0.17
-		2. Configurar en la terminal de la sesión PuTTY el usuario hadoop 
-		>> login as: hadoop
-		>> password: hadoop
-		3. En la sesión de la terminal hadoop@BIGDATA
-		   se puede encontrar el dataset (online_retail.csv) en la siguiente 
-		   ruta (punto de montaje de la carpeta compartida)
-		   >> ls /media/sf_comp_bigdata/
-		   Resultado en la terminal >> online_retail.csv
-		4. Copiar el Dataset (online_retail.csv) de la carptea compartida a 
-		   la carpeta /home/hadoop
-		   >> cp /media/sf_comp_bigdata/online_retail.csv /home/hadoop/
-		   Se verifica que se ha copiado de forma exitosa con el comando
-		   >> ls /home/hadoop/
-		   debe presentarse en el listado el dataset (online_retail.csv)
+- **Paso 1.** Iniciar una sesión PuTTY desde el ejecutable
+	- En la ventana `PuTTY Configuration` agregar la IP de la máquina virtual BIGDATA en el campo Hosst Name
+		- Para esta práctica se configuró `Host Name (or IP address): 192.168.0.17`
+		- Nota: la IP varía según la configuración de la máquina virtual BIGDATA.
+	- Cuando se inicia la terminal de la sesión PuTTY se configura el usuario hadoop para identificar la terminal remota 
+		- `login as: hadoop`
+		- `password: hadoop`
+	- Tras el inicio de la sesión en PuTTY de la terminal `hadoop@BIGDATA` se ubica el dataset `online_retail.csv` en la ruta `/media/sf_comp_bigdata/` el cual define el punto de montaje de la carpeta compartida.
+		```bash
+		ls /media/sf_comp_bigdata/
+		```
+		Resultado en la terminal: `online_retail.csv`
+	- Copiar el dataset `online_retail.csv` de la carptea compartida a la carpeta `/home/hadoop`
+		```bash
+		cp /media/sf_comp_bigdata/online_retail.csv /home/hadoop/
+		```
+		Se verifica que se ha copiado de forma exitosa con el comando
+		```bash
+		ls /home/hadoop/
+		```
+		Debe presentarse como resultado el listado el dataset: `online_retail.csv`
 
 # INSTRUCCIONES INICIAR SERVICIOS EN CLUSTER HADOOP
 		   
