@@ -157,30 +157,28 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		```bash
 		ls /home/hadoop/
 		```
-		Debe presentarse como resultado el listado el dataset: `online_retail.csv`
-
-# INSTRUCCIONES INICIAR SERVICIOS EN CLUSTER HADOOP
+		Debe presentarse como resultado el listado el dataset: `online_retail.csv`\
 		   
-Paso 2.	Se inician los servicios del clúster de Hadoop
-		>> start-all.sh
-		Se confirma los servicios activos con el siguiente comando
-		>> jps
-		Como respuesta exitosa en la terminal se deben mostrar los servicios
-		- DataNode
-		- SecondaryNameNode
-		- NameNode
-		- ResourceManager
-		- NodeManager
+- **Paso 2.** Se inician los servicios del clúster de Hadoop en la sesión de PuTTY `hadoop@BIGDATA` con la siguiente instrucción.
+		```bash
+		start-all.sh
+		```
+		Se confirma que los servicios están activos con el siguiente comando.
+		```bash
+		jps
+		```
+		Como respuesta exitosa en la terminal se deben mostrar el siguiente listado
+			- DataNode
+			- SecondaryNameNode
+			- NameNode
+			- ResourceManager
+			- NodeManager
 		
-		Nota: para confirmar que Hadoop está activo se accede a la interfaz gráfica
-		desde el navegador web usando 
-		>> la IP de la máquina virtual BIGDATA
-		>> el puerto 9870
-		Por ejemplo, para la práctica actual se implementó 
-		URL: http://192.168.0.17:9870
-		Si se observa en el navegador 
-		Overview 'localhost:9000' (active)
-		el proceso es exitoso.
+		**Alternativa gráfica:** para confirmar que Hadoop está activo se accede a Hadoop UI desde el navegador web usando 
+			- la IP de la máquina virtual BIGDATA, para esta práctica se uso `IP: 192.168.0.17`
+			- el puerto 9870
+			- Configuración de la URL: http://192.168.0.17:9870
+			- Si se observa en el navegador `Overview 'localhost:9000' (active)` se comprueba que el proceso es exitoso.
 
 # INSTRUCCIONES	AGREGAR DATASET AL SISTEMA DE ALMACENAMIENTO DISTRIBUIDO HDFS DE DATOS MASIVOS
 	
