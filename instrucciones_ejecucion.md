@@ -159,11 +159,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		```
 		Debe presentarse como resultado el listado el dataset: `online_retail.csv`\
 		   
-- **Paso 2.** Se inician los servicios del clúster de Hadoop en la sesión de PuTTY `hadoop@BIGDATA` con la siguiente instrucción.
+- **Paso 2.** Se inician los servicios del clúster de Hadoop en la sesión de PuTTY `hadoop@BIGDATA` 
+	- En la terminal se incian los servicios Hadoop con la siguiente instrucción.
 		```bash
 		start-all.sh
 		```
-		Se confirma que los servicios están activos con el siguiente comando.
+	- Se confirma que los servicios están activos con el siguiente comando.
 		```bash
 		jps
 		```
