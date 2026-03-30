@@ -72,16 +72,17 @@ import kagglehub
 path = kagglehub.dataset_download("thedevastator/online-retail-sales-and-customer-data")
 print("Path to dataset files:", path)
 ```
-Como resultado se tiene que la descarga está almacenada en el siguiente directorio:
-`C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1`\
+Como resultado se tiene que la descarga del dataset (online_retail.csv) está almacenada en el siguiente directorio:\
+`C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1`\ \
 **Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.
 		
-- Se configura una carpeta compartida entre Windows y la máquina virtual BIGDATA
+- Se crea una carpeta compartida entre Windows y la máquina virtual BIGDATA
 	1. Se crea un directorio para usar como carpeta compartida en PowerShell
 	```powershell
 	mkdir C:\Users\TuUsuario\Documents\comp_bigdata
 	```
-	**Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.
+	**Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.\
+	
 	2. Con la máquina virtual apagada en Oracle VirtualBox se accede a:
 		Clic en la máquina virtual BIGDATA
 			Configuración => Carpetas compartidas => Añadir nueva carpeta
