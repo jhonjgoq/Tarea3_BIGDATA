@@ -10,8 +10,8 @@
 2. [Dataset (objeto de estudio) información](#dataset-objeto-de-estudio-información)
 3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv)
 4. [Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS](#iniciar-servicios-de-hadoop-y-cargar-el-dataset-al-sistema-hdfs)
-2. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
-3. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
+5. [Instrucciones de ejecución del script Tarea3_batchpy (Análisis con Apache Spark)](#instrucciones-de-ejecución-del-script-tarea3_batchpy-análisis-con-apache-spark)
+
 
 ---
 
@@ -208,8 +208,9 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		
 	- **Importante:** Para el análisis (Batch con Apache Spark)siguiente la sesión en PuTTY `hadoop@BIGDATA` se mantiene activa en segundo plano (no se cierra la sesión PuTTY).
 
-#--------------------------------------------------------------------------------------------------
-# INSTRUCCIONES DE USO DEL SCRIPT Tarea3_batch.py (Análisis con APACHE SPARK)
+---
+
+## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
 
 Paso 1. Iniciar una sesión PuTTY desde el ejecutable putty.exe
 		1. En la ventana PuTTY Configuration agregar la IP de la máquina virtual BIGDATA con 
