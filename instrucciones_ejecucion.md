@@ -130,13 +130,14 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 
 ## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
-Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal 
-		la IP asignada a la máquina virtual BIGDATA con el siguiente comando:
-		>> hostname -I
-		En este ejemplo se tiene como respuesta la IP = 192.168.0.17
-		Nota: Usar la IP para iniciar sesión en PuTTY mediante SSH
+- Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal la IP asignada con el siguiente comando:
+	```bash 
+	hostname -I
+	```
+	Ejemplo: se tiene como respuesta la `IP = 192.168.0.17`
+	**Nota:** Usar la IP para iniciar sesión en PuTTY mediante SSH
 		
-Paso 1. Iniciar una sesión PuTTY desde el ejecutable
+- Paso 1. Iniciar una sesión PuTTY desde el ejecutable
 		1. En la ventana PuTTY Configuration agregar la IP de la máquina virtual 
 		   Ubuntu Server en el campo Host Name (or IP address)
 		   Por ejemplo, para la práctica actual se uso IP = 192.168.0.17
