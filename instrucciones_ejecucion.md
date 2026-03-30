@@ -168,18 +168,18 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		```bash
 		jps
 		```
-		Como respuesta exitosa en la terminal se deben mostrar el siguiente listado
-			- DataNode
-			- SecondaryNameNode
-			- NameNode
-			- ResourceManager
-			- NodeManager
+	- Como respuesta exitosa en la terminal se deben mostrar el siguiente listado de servicios activos.
+		- DataNode
+		- SecondaryNameNode
+		- NameNode
+		- ResourceManager
+		- NodeManager
 		
-		**Alternativa gráfica:** para confirmar que Hadoop está activo se accede a Hadoop UI desde el navegador web usando 
-			- la IP de la máquina virtual BIGDATA, para esta práctica se uso `IP: 192.168.0.17`
-			- el puerto 9870
-			- Configuración de la URL: http://192.168.0.17:9870
-			- Si se observa en el navegador `Overview 'localhost:9000' (active)` se comprueba que el proceso es exitoso.
+	- **Alternativa gráfica:** para confirmar que Hadoop está activo se accede a Hadoop UI desde el navegador web usando 
+		- la IP de la máquina virtual BIGDATA, para esta práctica se uso `IP: 192.168.0.17`
+		- el puerto 9870
+		- Configuración de la URL: http://192.168.0.17:9870
+		- Si se observa en el navegador `Overview 'localhost:9000' (active)` se comprueba que el proceso es exitoso.
 
 # INSTRUCCIONES	AGREGAR DATASET AL SISTEMA DE ALMACENAMIENTO DISTRIBUIDO HDFS DE DATOS MASIVOS
 	
