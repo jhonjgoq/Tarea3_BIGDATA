@@ -180,33 +180,33 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- el puerto 9870
 		- Configuración de la URL: http://192.168.0.17:9870
 		- Si se observa en el navegador `Overview 'localhost:9000' (active)` se comprueba que el proceso es exitoso.
-
-# INSTRUCCIONES	AGREGAR DATASET AL SISTEMA DE ALMACENAMIENTO DISTRIBUIDO HDFS DE DATOS MASIVOS
 	
-Paso 3.	Creación del directorio Tarea3 y agregación del dataset en el sistema HDFS 
-		1. Se crea la directorio Tarea3 en el sistema HDFS
-		>> hdfs dfs -mkdir /Tarea3
-		2. Se mueve el dataset descargado (online_retail.csv) en el directorio Tarea3
-		>> hdfs dfs -put /home/hadoop/online_retail.csv /Tarea3/
-		Se valida que el dataset (online_retail.csv) este en la lista de archivos HDFS
-		>> hdfs dfs -ls /Tarea3
-		Como resultado se debe tener algo simialar a:
+- **Paso 3.** Creación del directorio `Tarea3` y agregación del dataset `online_retail.csv` en el sistema de almacenamiento distribuido HDFS. 
+	- Se crea desde la terminal sesión de PuTTY `hadoop@BIGDATA` el directorio Tarea3 en el sistema HDFS
+		```bash
+		hdfs dfs -mkdir /Tarea3
+		```
+	- Se mueve el dataset `online_retail.csv` descargado y copiado hacia el directorio HDFS creado `/Tarea3`
+		```bash
+		hdfs dfs -put /home/hadoop/online_retail.csv /Tarea3/
+		```
+	- Se valida que el dataset (online_retail.csv) este en la lista de archivos HDFS
+		```bash
+		hdfs dfs -ls /Tarea3
+		```
+	- Como resultado se debe tener algo simialar a:
+		```bash
 		-rw-r--r--   1 hadoop supergroup   49543683 2026-03-29 04:18 /Tarea3/online_retail.csv
-		
-		Alternativa de validación desde el navegador web
+		```
+	- **Alternativa gráfica:** validación desde el navegador web
 		- Se accede a la interfaz gráfica de Hadoop usando el puerto 9870
-		- Se ingresa la URL: http://IP:9870
-		  Por ejemplo: URL: http://192.168.0.17:9870
-		- En la interfaz gráfica se navega por 
-			Utilities => Browse the file system
-		- Como resultado
-		  Se observa en Browse Directory la lista de directorios HDFS creados con atributos 
-		  Permission, Owner, Group, Size, Last Modified, Replication, Block Size, Name
-		- Clic en directorio Tarea3 (ver atributo Name) para ver su contenido
-		- Se visualiza el Dataset (online_retail.csv) agregado.
+		- Se ingresa la URL: http://IP:9870 Por ejemplo: URL: http://192.168.0.17:9870
+		- En la interfaz gráfica se navega por `Utilities` => `Browse the file system`
+		- Como resultado:
+			- Se observa en Browse Directory la lista de directorios HDFS creados con atributos Permission, Owner, Group, Size, Last Modified, Replication, Block Size, Name
+		- Clic en directorio Tarea3 (ver atributo Name) para ver su contenido donde se ubica el dataset `online_retail.csv`
 		
-		Nota: La sesión en PuTTY con usuario hadoop se mantiene activa en segundo 
-		plano mientras se ejecuta el análisis en otra sesión PuTTY con Apache Spark
+	- **Importante:** Para el análisis (Batch con Apache Spark)siguiente la sesión en PuTTY `hadoop@BIGDATA` se mantiene activa en segundo plano (no se cierra la sesión PuTTY).
 
 #--------------------------------------------------------------------------------------------------
 # INSTRUCCIONES DE USO DEL SCRIPT Tarea3_batch.py (Análisis con APACHE SPARK)
