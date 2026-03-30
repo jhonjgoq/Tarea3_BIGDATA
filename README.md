@@ -1,4 +1,3 @@
----
 # Práctica BIG DATA Tarea 3
 + **Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka**
 + **Autor: Jhon Jairo Gomez Quijano**
@@ -27,8 +26,20 @@
 - Dataset nombre: Online Retail Sales and Customer Data
 - Dataset autor: Szafraniec Marc
 - Dataset file: online_retail.csv
-	
+
+| Columna | Descripción | Tipo de dato |
+| :--- | :--- | :--- |
+| `InvoiceNo` | Identifica unívocamente cada transacción. | Numérico (Entero) |
+| `StockCode` | Referencia el código de inventario asignado a cada producto. | Alfanumérico |
+| `Description` | Describe de forma corta el producto. | Texto |
+| `Quantity` | Especifica la cantidad de productos vendidos por transacción. | Numérico (Entero) |
+| `InvoiceDate` | Presenta la fecha y hora de la ejecución de la compra (transacción aprobada). | Fecha/Hora |
+| `UnitPrice` | Referencia el precio unitario del producto asociado a la transacción. | Numérico (Decimal) |
+| `CustomerID` | Especifica el número identificador único del cliente que realiza la transacción. | Numérico (Entero) |
+| `Country` | Identifica el país donde el cliente realiza la compra. | Texto |	
+
 --- 
+
 ## Estructura del proyecto
 - Tarea3_batch.py -> análisis datos históricos (Batch) con Apache Spark
 - kafka_producer.py -> generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming)
