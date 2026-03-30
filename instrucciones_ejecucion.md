@@ -122,9 +122,9 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo usermod -aG vboxsf hadoop
 	```
-	Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida para poder acceder al Dataset desde la ruta `/media/sf_comp_bigdata/online_retail.csv`
-		
+	
 ---
+
 ## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
 Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal 
