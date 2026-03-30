@@ -40,7 +40,7 @@
 ### Descripción  
 En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset
 - En terminal PowerShell se instala el paquete Python de kagglehub
-```bash
+```powershell
 pip install kagglehub
 ```
 - Se inicia Jupyter Notebook desde PowerShell
