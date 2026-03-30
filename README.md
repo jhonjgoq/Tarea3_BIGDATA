@@ -1,9 +1,9 @@
 ---
 # Práctica BIG DATA Tarea 3
-#### Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka
-#### Autor: Jhon Jairo Gomez Quijano
-#### Grupo: 58
-#### Curso: Big Data UNAD
++ **Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka**
++ **Autor: Jhon Jairo Gomez Quijano**
++ **Grupo: 58**
++ **Curso: Big Data UNAD**
 
 # Análisis de ventas en comercio electrónico 
 ---

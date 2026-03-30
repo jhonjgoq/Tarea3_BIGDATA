@@ -1,8 +1,9 @@
+---
 # Práctica BIG DATA Tarea 3
-### Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka
-### Autor: Jhon Jairo Gomez Quijano
-### Grupo: 58
-### Curso: Big Data UNAD
++ **Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka**
++ **Autor: Jhon Jairo Gomez Quijano**
++ **Grupo: 58**
++ **Curso: Big Data UNAD**
 
 ## Instrucciones de ejecución de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
 ---
@@ -44,13 +45,14 @@ En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset
 pip install kagglehub
 ```
 - Se inicia Jupyter Notebook desde PowerShell
-```bash
+```powershell
 jupyter notebook
 ```
-- En una sesión notebook usando Python
-		Se importa la librería kagglehub y se descarga
-		>> import kagglehub
-		>> path = kagglehub.dataset_download("thedevastator/online-retail-sales-and-customer-data")
+- En una sesión notebook de Jupyter usando Python se importa la librería kagglehub y se descarga el dataset
+```python
+import kagglehub
+path = kagglehub.dataset_download("thedevastator/online-retail-sales-and-customer-data")
+
 	- Como resultado se tiene que la descarga está almacenada en el directorio
 		Directorio de descarga:
 		C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1

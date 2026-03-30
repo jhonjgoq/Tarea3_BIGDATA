@@ -1,4 +1,11 @@
-# Descripción de la solución - Procesamiento Batch con Apache Spark y Apache Hadoop
+---
+# Práctica BIG DATA Tarea 3
++ **Tarea 3: Análisis de datos Batch y Streaming con Apache Spark y Apache Kafka**
++ **Autor: Jhon Jairo Gomez Quijano**
++ **Grupo: 58**
++ **Curso: Big Data UNAD**
+
+## Descripción de la solución - Procesamiento Batch con Apache Spark y Apache Hadoop
 
 ## Paso 1. Carga de datos empleando sistema HDFS
 1. El proceso inicia con la creación de una sesión de Apache Spark, la cual permite el procesamiento distribuido de grandes volúmenes de datos.
@@ -6,7 +13,7 @@
 
 ---
 
-## 2. Selección de variables relevantes
+## Paso 2. Selección de variables relevantes
 Con el objetivo de optimizar el rendimiento del procesamiento y enfocar el análisis en variables clave, se realiza una selección de columnas relevantes:
 
 - **StockCode**: Identificador del producto  
