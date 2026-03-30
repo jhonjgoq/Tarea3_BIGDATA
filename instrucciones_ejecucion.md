@@ -8,7 +8,7 @@
 ### Índice de contenidos
 1. [Elementos de la práctica BIG DATA Tarea 3](#elementos-de-la-práctica-big-data-tarea-3)
 2. [Dataset (objeto de estudio) información](#dataset-objeto-de-estudio-información)
-3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv
+3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv)
 4. [Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS](#iniciar-servicios-de-hadoop-y-cargar-el-dataset-al-sistema-hdfs)
 2. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
 3. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
