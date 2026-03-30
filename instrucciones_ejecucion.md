@@ -4,26 +4,26 @@
 ### Grupo: 58
 ### Curso: Big Data UNAD
 
-## INSTRUCCIONES DE EJECUCIÓN DE LA SOLUCIÓN ANÁLISIS (BATCH) DE DATOS HISTÓRICOS
+## Instrucciones de ejecución de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
 ---
 ## Elementos de la práctica: 
 - Máquina Virtual (Oracle VirtualBox)
 	- Nombre máquina: BIGDATA
 	- Descripción: Ubuntu Server 22.04.05 LTS
 	- Usuarios creados en la máquina virtual:
-		- nameuser_1: vboxuser  password: bigdata
-		- nameuser_2: hadoop    password: hadoop
+		- nameuser_1: vboxuser		password: bigdata
+		- nameuser_2: hadoop    	password: hadoop
 	
 - Sofware PuTTY Release 0.83
-	- URL: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+	- Fuente URL: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 		
 	- Se conecta vía SSH usando la IP de la máquina virtual BIGDATA
-	- para iniciar una sesión PuTTY de terminal remota Linux
+	- para iniciar una sesión PuTTY de la terminal remota Linux
 		
-	- Se tiene una instalación previa de Java, PIP3, Hadoop, Spark, Kafka
+	- Se ejecuta una instalación previa de Java, PIP3, Hadoop, Spark, Kafka sobre la máquina virtual BIGDATA.
 
 --- 
-## Dataset (objeto de estudio)
+## Dataset (objeto de estudio) información
 
 + Tema: comercio electrónico (ventas minorístas en línea y transacciones de clientes) 
 + Fuente: obtenido en la Web de Kaggle
@@ -35,15 +35,19 @@
 + Dataset file: online_retail.csv
 	
 ---
-# Requisitos preliminares (Obtención de Dataset online_retail.csv)  
+## Requisitos preliminares (Obtención de Dataset online_retail.csv)  
 	
-	Descripción  
-	- En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset
-		En terminal PowerShell se ejecuta
-		>> pip install kagglehub
-		Se inicia Jupyter Notebook desde PowerShell
-		>> jupyter notebook
-	- En una sesión notebook usando Python
+### Descripción  
+En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset
+- En terminal PowerShell se instala el paquete Python de kagglehub
+```bash
+pip install kagglehub
+```
+- Se inicia Jupyter Notebook desde PowerShell
+```bash
+jupyter notebook
+```
+- En una sesión notebook usando Python
 		Se importa la librería kagglehub y se descarga
 		>> import kagglehub
 		>> path = kagglehub.dataset_download("thedevastator/online-retail-sales-and-customer-data")
