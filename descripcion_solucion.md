@@ -1,8 +1,8 @@
 # Descripción de la solución - Procesamiento Batch con Apache Spark y Apache Hadoop
 
 ## Paso 1. Carga de datos empleando sistema HDFS
-	1. El proceso inicia con la creación de una sesión de Apache Spark, la cual permite el procesamiento distribuido de grandes volúmenes de datos.
-	2. se realiza la carga del dataset *online_retail.csv* desde el sistema de archivos distribuido HDFS. Se utiliza el formato CSV con encabezados y se habilita la inferencia automática de tipos de datos para facilitar el análisis inicial.
+1. El proceso inicia con la creación de una sesión de Apache Spark, la cual permite el procesamiento distribuido de grandes volúmenes de datos.
+2. se realiza la carga del dataset *online_retail.csv* desde el sistema de archivos distribuido HDFS. Se utiliza el formato CSV con encabezados y se habilita la inferencia automática de tipos de datos para facilitar el análisis inicial.
 
 ---
 
