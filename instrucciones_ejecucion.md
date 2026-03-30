@@ -4,23 +4,31 @@
 + **Grupo: 58**
 + **Curso: Big Data UNAD**
 
-## Instrucciones de ejecución de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
+## Instrucciones de ejecución temas
+0. ### Requisitos preliminares (Obtención de Dataset online_retail.csv)
+1. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
+2. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
+
 ---
+
 ## Elementos de la práctica: 
 - Máquina Virtual (Oracle VirtualBox)
 	- Nombre máquina: BIGDATA
 	- Descripción: Ubuntu Server 22.04.05 LTS
 	- Usuarios creados en la máquina virtual:
-		- nameuser_1: vboxuser		password: bigdata
-		- nameuser_2: hadoop    	password: hadoop
 	
-- Sofware PuTTY Release 0.83
-	- Fuente URL: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+		| Nombre usuario | Password |
+		| :--- | :--- | 
+		| vboxuser | bigdata |
+		| hadoop | hadoop |
 		
-	- Se conecta vía SSH usando la IP de la máquina virtual BIGDATA
-	- para iniciar una sesión PuTTY de la terminal remota Linux
+- Sobre la máquina virtual BIGDATA:
+	- Se ejecuta una instalación de Java, PIP3, Hadoop, Spark, Kafka.
+	
+- Sofware PuTTY Release 0.83 ejecutándose en Windows
+	- Descarga URL: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 		
-	- Se ejecuta una instalación previa de Java, PIP3, Hadoop, Spark, Kafka sobre la máquina virtual BIGDATA.
+	- Se conecta vía SSH usando la IP de la máquina virtual BIGDATA, lo que permite extender la terminal Linux de la máquina virtual BIGDATA a una sesión remota PuTTY en Windows. 
 
 --- 
 ## Dataset (objeto de estudio) información
@@ -33,6 +41,17 @@
 + Dataset nombre: Online Retail Sales and Customer Data
 + Dataset autor: Szafraniec Marc
 + Dataset file: online_retail.csv
+
+| Columna | Descripción | Tipo de dato |
+| :--- | :--- | :--- |
+| `InvoiceNo` | Identifica unívocamente cada transacción. | Numérico (Entero) |
+| `StockCode` | Referencia el código de inventario asignado a cada producto. | Alfanumérico |
+| `Description` | Describe de forma corta el producto. | Texto |
+| `Quantity` | Especifica la cantidad de productos vendidos por transacción. | Numérico (Entero) |
+| `InvoiceDate` | Presenta la fecha y hora de la ejecución de la compra (transacción aprobada). | Fecha/Hora |
+| `UnitPrice` | Referencia el precio unitario del producto asociado a la transacción. | Numérico (Decimal) |
+| `CustomerID` | Especifica el número identificador único del cliente que realiza la transacción. | Numérico (Entero) |
+| `Country` | Identifica el país donde el cliente realiza la compra. | Texto |	
 	
 ---
 ## Requisitos preliminares (Obtención de Dataset online_retail.csv)  
