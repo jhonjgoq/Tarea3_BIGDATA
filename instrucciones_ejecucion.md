@@ -8,7 +8,8 @@
 ### Índice de contenidos
 1. [Elementos de la práctica BIG DATA Tarea 3](#elementos-de-la-práctica-big-data-tarea-3)
 2. [Dataset (objeto de estudio) información](#dataset-objeto-de-estudio-información)
-3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv)
+3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv
+4. [Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS](#iniciar-servicios-de-hadoop-y-cargar-el-dataset-al-sistema-hdfs)
 2. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
 3. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
 
@@ -58,9 +59,8 @@
 	
 ---
 ## Requisitos preliminares (Obtención de Dataset online_retail.csv)  
-	
-### Descripción  
-En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset
+  
+En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset, luego empleando una carpeta compartida entre Windows y la máquina virtual BIGDATA se tranfiere el dataset `online_retail.csv` al directorio `/home/hadoop/` para iniciar el análisis de datos históricos (Batch) usando Hadoop y Spark. Para conseguir esto seguir las siguientes indicaciones: 
 - En terminal PowerShell se instala el paquete Python de kagglehub
 ```powershell
 pip install kagglehub
@@ -125,7 +125,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida para poder acceder al Dataset desde la ruta `/media/sf_comp_bigdata/online_retail.csv`
 		
 ---
-## INSTRUCCIONES PARA INICIAR LA SESION EN PuTTY
+## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
 Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal 
 		la IP asignada a la máquina virtual BIGDATA con el siguiente comando:
