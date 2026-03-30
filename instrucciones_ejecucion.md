@@ -4,14 +4,17 @@
 + **Grupo: 58**
 + **Curso: Big Data UNAD**
 
-## Instrucciones de ejecución temas
-0. ### Requisitos preliminares (Obtención de Dataset online_retail.csv)
-1. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
-2. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
+## Instrucciones de ejecución de la solución Tarea 3 BIG DATA
+### Índice de contenidos
+1. [Elementos de la práctica BIG DATA Tarea 3](#elementos-de-la-práctica-big-data-tarea-3)
+2. [Dataset (objeto de estudio) información](#dataset-objeto-de-estudio-información)
+3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv)
+2. ### Instrucciones de la solución Análisis (Batch) de datos históricos usando Hadoop HDFS y Apache Spark
+3. ### Instrucciones del análisis en tiempo real usando Apache Spark y Apache Kafka
 
 ---
 
-## Elementos de la práctica: 
+## Elementos de la práctica BIG DATA Tarea 3 
 - Máquina Virtual (Oracle VirtualBox)
 	- Nombre máquina: BIGDATA
 	- Descripción: Ubuntu Server 22.04.05 LTS
@@ -104,7 +107,6 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo apt update
 	```
-	
 	- Instalar el paquete virtualbox-guest-utils (password: `bigdata`)
 	```bash
 	sudo apt install virtualbox-guest-utils
@@ -120,10 +122,10 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo usermod -aG vboxsf hadoop
 	```
-	Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida para poder acceder al Dataset desde la ruta (/media/sf_comp_bigdata/online_retail.csv)
+	Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida para poder acceder al Dataset desde la ruta `/media/sf_comp_bigdata/online_retail.csv`
 		
-#--------------------------------------------------------------------------------------------------
-# INSTRUCCIONES PARA INICIAR LA SESION EN PuTTY
+---
+## INSTRUCCIONES PARA INICIAR LA SESION EN PuTTY
 
 Paso 0. En la terminal de la máquina virtual BIGDATA verificar en la terminal 
 		la IP asignada a la máquina virtual BIGDATA con el siguiente comando:
