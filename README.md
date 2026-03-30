@@ -41,14 +41,17 @@
 --- 
 
 ## Estructura del proyecto
-- Tarea3_batch.py -> análisis datos históricos (Batch) con Apache Spark
-- kafka_producer.py -> generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming)
-- Tarea3_streaming.py -> análisis de procesamiento en tiempo real (Streaming) con Spark y Kafka
+A continuación, se presenta una descripción de los script creados para ejecutar el análisis del dataset (online_retail.csv)
+| Script | Descripción |
+| :--- | :--- |
+| Tarea3_batch.py | Análisis datos históricos (Batch) con Apache Spark y Hadoop HDFS |
+| kafka_producer.py | Generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming) |
+| Tarea3_streaming.py | Análisis de procesamiento en tiempo real (Streaming) con Apache Spark y Apache Kafka |
 	
 ---
 ## Ejecución de la solución
 - Ver archivo: instrucciones_ejecucion.md
 	
 --- 
-## Descripción técnica
+## Descripción técnica del análisis
 - Ver archivo: descripcion_solucion.md
