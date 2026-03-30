@@ -76,34 +76,35 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 `C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1`\ \
 **Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.
 		
-- Se crea una carpeta compartida entre Windows y la máquina virtual BIGDATA
-	1. Se crea un directorio para usar como carpeta compartida en PowerShell
+- Se crea una carpeta compartida entre Windows y la máquina virtual BIGDATA desde PowerShell
 	```powershell
 	mkdir C:\Users\TuUsuario\Documents\comp_bigdata
 	```
-	**Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.\
+**Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.\
 	
-	2. Con la máquina virtual apagada en Oracle VirtualBox se accede a:
-		Clic en la máquina virtual BIGDATA
-			Configuración => Carpetas compartidas => Añadir nueva carpeta
-			Ruta de carpeta: C:\Users\TuUsuario\Documents\comp_bigdata
-			Nombre de carpeta: comp_bigdata
-			Clic en Automontar
-			Clic en Aceptar
-	- Se copia el Dataset (online_retail.csv) a la carpeta compartida
-		Ruta origen C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1 
-		Ruta destino C:\Users\TuUsuario\Documents\comp_bigdata
-		
-	- Nota: Se requiere instalar virtualbox-guest-utils en la máquina virtual
-		BIGDATA para tener un punto de montaje de la carpeta compartida configurada.
-	- Nota: Por defecto el punto de montaje de la carpeta compartida en Linux Ubuntu Server es
-		>> /media/sf_comp_bigdata
+- Con la máquina virtual BIGDATA apagada, desde Oracle VirtualBox se configura la carpeta compartida con los siguientes pasos:
+	+ Clic en la máquina virtual BIGDATA
+	+ Clic en `Configuración` => `Carpetas compartidas` => `Añadir nueva carpeta`
+	+ En la ventana emergente configurar las siguientes opciones:
+		+ Ruta de carpeta: C:\Users\TuUsuario\Documents\comp_bigdata
+		+ Nombre de carpeta: comp_bigdata
+		+ Clic en Automontar
+		+ Clic en Aceptar
+- Se copia el Dataset (online_retail.csv) a la carpeta compartida desde la ruta de descarga con la siguiente instrucción en PowerShell:
+	```powershell
+	cp C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1\online_retail.csv C:\Users\TuUsuario\Documents\comp_bigdata\
+	```
+	cp C:\Users\JhonGomez\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1\online_retail.csv C:\Users\JhonGomez\Documents\comp_bigdata\	
+- Nota: Se requiere instalar `virtualbox-guest-utils` en la máquina virtual BIGDATA para tener un punto de montaje de la carpeta compartida configurada.
+- Nota: Por defecto el punto de montaje de la carpeta compartida en la máquina virtual BIGDATA es: `/media/sf_comp_bigdata`
 			
-	- Iniciar la máquina virtual BIGDATA desde Oracle VirtualBox
-		Ingresar con usuario: vboxuser y password: bigdata
-		1. Sincronizar y actualizar lista de paquetes
-		>> sudo apt update
-		>> password: bigdata
+- Iniciar la máquina virtual BIGDATA desde Oracle VirtualBox
+	- Ingresar con usuario: `vboxuser` y password: `bigdata`
+	- Sincronizar y actualizar lista de paquetes (password: `bigdata`)
+	```bash
+	sudo apt update
+	```
+	
 		2. Instalar el paquete virtualbox-guest-utils
 		>> sudo apt install virtualbox-guest-utils
 		3. Se requiere reiniciar la máquina virtual BIGDATA
