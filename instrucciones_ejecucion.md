@@ -105,20 +105,22 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	sudo apt update
 	```
 	
-		2. Instalar el paquete virtualbox-guest-utils
-		>> sudo apt install virtualbox-guest-utils
-		3. Se requiere reiniciar la máquina virtual BIGDATA
-		>> sudo reboot
-		
-	- Después del reinicio de la máquina virtual BIGDATA	
-		1. Ingresar con usuario: vboxuser y password: bigdata
-		2. Agregar el usuario (hadoop) al grupo vboxsf para tener permisos
-		   y poder acceder desde el usuario (hadoop) a la carpeta compartida (/media/sf_comp_bigdata)
-		   En la terminal ejecutar:
-		   >> sudo usermod -aG vboxsf hadoop
-		   >> password: bigdata
-		Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida 
-		para poder acceder al Dataset (/media/sf_comp_bigdata/online_retail.csv)
+	- Instalar el paquete virtualbox-guest-utils (password: `bigdata`)
+	```bash
+	sudo apt install virtualbox-guest-utils
+	```
+	- Se requiere reiniciar la máquina virtual BIGDATA
+	```bash
+	sudo reboot
+	```
+	
+- Después del reinicio de la máquina virtual BIGDATA	
+	- Ingresar con usuario: `vboxuser` y password: `bigdata`
+	- Agregar el usuario `hadoop` al grupo `vboxsf` para garantizar los permisos de acceso a la carpeta compartida `/media/sf_comp_bigdata`. La contraseña de superusuario es password: `bigdata`
+	```bash
+	sudo usermod -aG vboxsf hadoop
+	```
+	Nota: se asignan permisos de acceso al usuario hadoop a la carpeta compartida para poder acceder al Dataset desde la ruta (/media/sf_comp_bigdata/online_retail.csv)
 		
 #--------------------------------------------------------------------------------------------------
 # INSTRUCCIONES PARA INICIAR LA SESION EN PuTTY
