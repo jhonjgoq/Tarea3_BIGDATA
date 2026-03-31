@@ -44,7 +44,7 @@
 A continuación, se presenta una descripción de los script creados para ejecutar el análisis del dataset (online_retail.csv)
 | Script | Descripción |
 | :--- | :--- |
-| Tarea3_batch.py | Análisis datos históricos (Batch) con Apache Spark y Hadoop HDFS |
+| [Tarea3_batch.py](./Tarea3_batch.py) | Análisis datos históricos (Batch) con Apache Spark y Hadoop HDFS |
 | kafka_producer.py | Generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming) |
 | Tarea3_streaming.py | Análisis de procesamiento en tiempo real (Streaming) con Apache Spark y Apache Kafka |
 	
