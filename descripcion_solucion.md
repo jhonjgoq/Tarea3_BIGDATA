@@ -15,11 +15,13 @@
 ### Paso 2. Selección de variables relevantes
 Con el objetivo de optimizar el rendimiento del procesamiento y enfocar el análisis en variables clave, se realiza una selección de columnas relevantes:
 
-- **StockCode**: Identificador del producto  
-- **Quantity**: Cantidad de unidades vendidas  
-- **UnitPrice**: Precio unitario del producto  
-- **InvoiceDate**: Fecha de la transacción (fecha de la factura) 
-- **Country**: País del cliente (donde se gestionó la transacción)  
+| Columna | Descripción | Tipo de dato |
+| :--- | :--- | :--- |
+| `StockCode` | Identificador del producto | Numérico (Entero) |  
+| `Quantity` | Cantidad de unidades vendidas | Numérico (Entero) |  
+| `UnitPrice` | Precio unitario del producto | Numérico (Decimal) | 
+| `InvoiceDate` | Fecha de la transacción (fecha de la factura) | Texto (string) | 
+| `Country` | País del cliente (donde se gestionó la transacción) | Texto (string) | 
 
 Esta reducción permite trabajar únicamente con los datos necesarios para el análisis de ventas e inventario.
 

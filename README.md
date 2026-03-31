@@ -31,12 +31,12 @@
 | :--- | :--- | :--- |
 | `InvoiceNo` | Identifica unívocamente cada transacción. | Numérico (Entero) |
 | `StockCode` | Referencia el código de inventario asignado a cada producto. | Alfanumérico |
-| `Description` | Describe de forma corta el producto. | Texto |
+| `Description` | Describe de forma corta el producto. | Texto (string) |
 | `Quantity` | Especifica la cantidad de productos vendidos por transacción. | Numérico (Entero) |
-| `InvoiceDate` | Presenta la fecha y hora de la ejecución de la compra (transacción aprobada). | Fecha/Hora |
+| `InvoiceDate` | Presenta la fecha y hora de la ejecución de la compra (transacción aprobada). | Texto (string) |
 | `UnitPrice` | Referencia el precio unitario del producto asociado a la transacción. | Numérico (Decimal) |
 | `CustomerID` | Especifica el número identificador único del cliente que realiza la transacción. | Numérico (Entero) |
-| `Country` | Identifica el país donde el cliente realiza la compra. | Texto |	
+| `Country` | Identifica el país donde el cliente realiza la compra. | Texto (string) |	
 
 --- 
 
