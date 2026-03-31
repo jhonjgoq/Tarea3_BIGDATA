@@ -212,15 +212,14 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 
 ## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
 
-Paso 1. Iniciar una sesión PuTTY desde el ejecutable putty.exe
-		1. En la ventana PuTTY Configuration agregar la IP de la máquina virtual BIGDATA con 
-		   Ubuntu Server en el campo Host Name (or IP address)
-		   Por ejemplo, para la práctica actual se uso IP = 192.168.0.17
-		2. Configurar en la terminal de la sesión PuTTY el usuario vboxuser 
-		>> login as: vboxuser
-		>> password: bigdata
+- **Paso 1.** Iniciar una sesión PuTTY desde el ejecutable putty.exe con el usuario `vboxuser`
+	- En la ventana PuTTY Configuration agregar la IP de la máquina virtual BIGDATA en el campo Host Name (or IP address)
+		- Para la práctica se uso `Host Name: 192.168.0.17`
+	- Configurar en la terminal la sesión PuTTY el usuario `vboxuser` 
+		- `login as: vboxuser`
+		- `password: bigdata`
 		
-Paso 2. Construcción y Ejecución del Script Python
+Paso 2. Construcción y Ejecución del Script Python `Tarea3_batch.py` para el análisis histórico de los datos.
 		En la sesión de la terminal vboxuser@BIGDATA se crea el script Python
 		1. En la terminal con el editor de texto nano se crea el archivo 
 		   (script) Tarea3_batch.py con la siguiente instrucción en la terminal

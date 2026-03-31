@@ -30,31 +30,34 @@ Esta reducción permite trabajar únicamente con los datos necesarios para el an
 ### Paso 3. Análisis de calidad de datos
 Se realiza una verificación de valores nulos en cada una de las columnas seleccionadas. Este paso permite identificar posibles inconsistencias en el dataset y evaluar la calidad de los datos antes de aplicar transformaciones.
 
+- Se contabiliza por columna la ocurrencia de valores nulos (`NaN`)
+- El dataset `online_retail.csv` para las columnas `StockCode`, `Quantity`, `UnitPrice`, `InvoiceDate` y `Country` no evidencia valores nulos.
+- Nota: El dataset `online_retail.csv` en las columnas descartadas `Description` y `CustomerID` evidencia la ocurrencia de valores nulos `NaN`. 
+- Como el análisis descarta las columnas `Description` y `CustomerID` con valores nulos, entonces no se ejecuta un mecanismo de tratamiento de valores nulos.      
+
 ---
 
 ### Paso 4. Limpieza de datos
 Se implementan filtros para mejorar la calidad de la información:
 
-- Se eliminan registros con valores no positivos en **Quantity**, ya que representan devoluciones o ajustes.
-- Se eliminan registros con valores no positivos en **UnitPrice**, ya que no representan transacciones comerciales válidas.
+- Se eliminan registros con valores no positivos en la columna `Quantity`, puesto que los valores negativos o nulos representan devoluciones o ajustes en las operaciones de comercio electrónico.
+- Se eliminan registros con valores no positivos en la columna `UnitPrice`, puesto que los valores negativos o nulos no representan transacciones comerciales válidas en las operaciones de comercio electrónico.
 
 Adicionalmente, se realiza una comparación del número de registros antes y después de la limpieza para evidenciar el impacto del proceso.
 
 ---
 
 ### Paso 5. Transformación de datos
-Se aplican diversas transformaciones para enriquecer el dataset:
-
+Se aplican diversas transformaciones para completar el dataset:
+   
 #### Paso 5.1 Conversión de fecha
 La columna **InvoiceDate**, originalmente en formato texto, se convierte a tipo fecha (timestamp), lo que permite realizar análisis temporales.
+- **Transformacion_1:** Convertir los datos en la columna `InvoiceDate` con las fechas de tipo string en un formato de Marca de Tiempo `timestampType`
 
 #### Paso 5.2 Variables derivadas de tiempo
-Se generan nuevas columnas:
-- **Year**
-- **Month**
-- **Day**
-
-Estas variables permiten analizar el comportamiento de las ventas en diferentes niveles de granularidad temporal.
+Se generan nuevas columnas (segmentando la información temporal) para analizar el comportamiento de las ventas en diferentes niveles de granularidad temporal.
+- **Transformacion_2:** Definir nuevas columnas `Year`, `Month` y `Day` para segmentar en datos atómicos los datos en la columna `InvoiceDate`. 
+- Lo que permite agrupar los registros en función de las distintas categorías de tiempo segmentadas beneficiando la identificación de patrones.
 
 #### Paso 5.3 Cálculo de ingresos
 Se crea la variable **TotalPrice**, calculada como:
@@ -62,23 +65,24 @@ Se crea la variable **TotalPrice**, calculada como:
 > TotalPrice = Quantity × UnitPrice
 
 Este indicador representa el valor total de cada transacción y es fundamental para el análisis financiero.
-
+- **Transformacion_3:** Definir la columna derivada `TotalPrice` desde el producto de las columnas `Quantity` y `UnitPrice` para obtener el valor total de la venta por cada registro.
+- **Resultado de la transformación:** Organiza el nuevo dataframe con una versión segmentada y ampliada de los datos.
 ---
 
 ### Paso 6. Análisis exploratorio de datos (EDA)
 
 #### Paso 6.1 Productos más vendidos
-Se agrupan los datos por **StockCode** y se calcula la suma total de unidades vendidas, permitiendo identificar los productos con mayor demanda.
+Se agrupan los datos por la columna `StockCode` y se calcula la suma total de unidades vendidas columna `Quantity`, permitiendo identificar los productos con mayor demanda.
 
 ---
 
 #### Paso 6.2 Ventas por país
-Se agrupan las ventas por **Country** y se calcula el total de ingresos generados por cada país. Este análisis permite identificar mercados clave y segmentación geográfica.
+Se agrupan las ventas por la columna `Country` y se calcula el total de ingresos generados por cada país sumando los valores de la columna `TotalPrice`. Este análisis permite identificar mercados clave y segmentación geográfica.
 
 ---
 
 ### 6.3 Ventas por periodo de tiempo
-Se realiza una agregación por **Year** y **Month** para analizar el comportamiento temporal de las ventas. Este análisis permite identificar tendencias, estacionalidad y variaciones en la demanda.
+Se realiza una agregación por las columnas `Year` y `Month` para analizar el comportamiento temporal de las ventas sumando la columna `TotalPrice` por cada agrupación temporal. Este análisis permite identificar tendencias, estacionalidad y variaciones en la demanda.
 
 ---
 
@@ -92,7 +96,7 @@ Este resultado permite priorizar productos estratégicos y anticipar necesidades
 ### Paso 8. Visualización y monitoreo
 Los resultados del procesamiento se visualizan directamente en consola mediante el uso de funciones como `show()`.
 
-Adicionalmente, se habilita una pausa en la ejecución del programa para permitir el acceso a la interfaz gráfica de **Spark UI**, donde es posible monitorear el rendimiento del procesamiento, tareas ejecutadas y uso de recursos.
+Adicionalmente, se habilita una pausa en la ejecución del programa para permitir el acceso a la interfaz gráfica de `Spark UI`, donde es posible monitorear el rendimiento del procesamiento, tareas ejecutadas y uso de recursos.
 
 ---
 
