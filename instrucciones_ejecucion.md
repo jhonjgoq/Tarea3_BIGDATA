@@ -251,5 +251,6 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - **Paso 1.** Se inicia una sesión de terminal remota con PuTTY con las siguientes configuraciones:
 	- Host Name (or IP address) = `IP de la máquina virtual BIGDATA`\
 	Para esta práctica se utiliza `IP = 192.168.0.17`
-
+	- Login as: `vboxuser`
+	- Password: `bigdata`
 ## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
