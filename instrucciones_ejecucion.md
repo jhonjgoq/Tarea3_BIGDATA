@@ -219,45 +219,28 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- `login as: vboxuser`
 		- `password: bigdata`
 		
-Paso 2. Construcción y Ejecución del Script Python `Tarea3_batch.py` para el análisis histórico de los datos.
-		En la sesión de la terminal vboxuser@BIGDATA se crea el script Python
-		1. En la terminal con el editor de texto nano se crea el archivo 
-		   (script) Tarea3_batch.py con la siguiente instrucción en la terminal
-		   >> nano Tarea3_batch.py
-		   Nota: el editor nano crea un archivo Python vacío
+- **Paso 2.** Construcción y Ejecución del script Python `Tarea3_batch.py` para el análisis histórico de los datos. 
+	- En la sesión de la terminal vboxuser@BIGDATA se crea el script `Tarea3_batch.py` empleando el editor de texto `nano` como sigue:
+	```bash
+	nano Tarea3_batch.py
+	```
+	Nota: el editor nano crea un archivo Python vacío.
 		   
-		2. El código fuente del script (Tarea3_batch.py) compartido en el repositorio GitHub
-		   se copia y se pega en el editor nano abierto en PuTTY. Y se ejecuta los siguientes pasos
-		   >> Copiar código fuente del script en el repositorio GitHub llamado (Tarea3_batch.py) 
-		   >> Pegar con clic derecho sobre la sesión del editor nano
-		   >> Se usa la combinación CTRL + X para guardar datos
-		   >> Se usa la combinación CTRL + O para cerrar el editor nano
-		
-		3. Se procede a verificar en la ruta /home/vboxuser/ la existencia del script
-		   con el código fuente del análisis de datos histórico Batch. En la terminal
-		   se ejecuta el siguiente comando para ver el listado de archivos:
-		   >> ls /home/vboxuser/
-		   Entre el listado de resultados debe estar (Tarea3_batch.py)
+	- El código fuente en el script `Tarea3_batch.py` se copia y se pega en el editor `nano` abierto en PuTTY.
+		- Copiar código fuente del script en el repositorio GitHub llamado [Tarea3_batch.py](./Tarea3_batch.py) 
+		- Pegar con clic derecho sobre el editor nano.
+		- Se usa la combinación CTRL + X para guardar datos y confirmar el nombre del script.
+		- Se usa la combinación CTRL + O para cerrar el editor nano.
 		   
-		4. Se ejecuta el script (Tarea3_batch.py) con el código fuente del análisis Batch
-		   ejecutando el siguiente comando
-		   >> python3 Tarea3_batch.py
+	- Se ejecuta el script `Tarea3_batch.py` con el código fuente del análisis Batch
+	```bash
+	python3 Tarea3_batch.py
+	```
+	- Salida del script: en la terminal se presenta los resultados del análisis.
 		   
-		   Resultado: en la terminal se presenta los resultados del análisis.
-		   
-		   Nota: al final del script se observa una línea que permite mantener 
-		   la ejecución en curso duarante 60 segundos.
-		   
-		   Nota: Esto se realiza para obtener tiempo extra 60 segundos para 
-		   navegar en la interfaz gráfico de Apache Spark. Debido a que en 
-		   Apache Spark UI solo es accesible para navegar mientras que script 3
-		   permanezca en ejecución.
-		   
-		5. El acceso a la interfaz gráfica Apache Spark UI se debe realizar mientras se ejecuta
-		   el script (Tarea3_batch.py) con el análisis histórico de los datos referenciados en el 
-		   dataset (online_retail.csv) almacenado el el sistema HDFS en el directorio Tarea3.
-		   
-		   - Se accede a la interfaz gráfica de Hadoop usando el puerto 4040
-		   - Se ingresa la URL: http://IP:4040
-		   Por ejemplo: URL: http://192.168.0.17:4040
-		   - En la interfaz gráfica se navega por 
+	- Nota: al final del script se observa una línea que permite pausar la ejecución en curso duarante 60 segundos. Lo que permite navegar en la interfaz gráfico de Apache Spark. Debido a que en 
+	- Nota: Apache Spark UI solo es accesible mientras el script Tarea3_batch.py](./Tarea3_batch.py) está en ejecución.
+	   
+	- Se accede a la interfaz gráfica de Apache Spark usando el puerto 4040
+		- Se ingresa la URL: http://IP:4040 Por ejemplo: URL: http://192.168.0.17:4040
+		- En la interfaz gráfica se navega por 
