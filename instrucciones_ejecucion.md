@@ -5,13 +5,14 @@
 + **Curso: Big Data UNAD**
 
 ## Instrucciones de ejecución de la solución Tarea 3 BIG DATA
-### Índice de contenidos
+### Índice de contenidos: Procesamiento de datos por lotes (Batch)
 1. [Elementos de la práctica BIG DATA Tarea 3](#elementos-de-la-práctica-big-data-tarea-3)
 2. [Dataset (objeto de estudio) información](#dataset-objeto-de-estudio-información)
 3. [Requisitos preliminares (Obtención de Dataset online_retailcsv)](#requisitos-preliminares-obtención-de-dataset-online_retailcsv)
 4. [Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS](#iniciar-servicios-de-hadoop-y-cargar-el-dataset-al-sistema-hdfs)
 5. [Instrucciones de ejecución del script Tarea3_batchpy (Análisis con Apache Spark)](#instrucciones-de-ejecución-del-script-tarea3_batchpy-análisis-con-apache-spark)
 
+### Índice de contenidos: Procesamiento de datos por lotes (Batch)
 
 ---
 
@@ -244,3 +245,11 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Se accede a la interfaz gráfica de Apache Spark usando el puerto 4040
 		- Se ingresa la URL: http://IP:4040 Por ejemplo: URL: http://192.168.0.17:4040
 		- En la interfaz gráfica se navega por 
+		
+		
+## Requisitos preliminares de configuración (Spark Streaming y Kafka)
+- **Paso 1.** Se inicia una sesión de terminal remota con PuTTY con las siguientes configuraciones:
+	- Host Name (or IP address) = `IP de la máquina virtual BIGDATA`\
+	Para esta práctica se utiliza `IP = 192.168.0.17`
+
+## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
