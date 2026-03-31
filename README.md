@@ -50,8 +50,8 @@ A continuación, se presenta una descripción de los script creados para ejecuta
 	
 ---
 ## Ejecución de la solución
-- Ver archivo: instrucciones_ejecucion.md
+- Ver archivo: [instrucciones_ejecucion.md](./instrucciones_ejecucion.md)
 	
 --- 
 ## Descripción técnica del análisis
-- Ver archivo: descripcion_solucion.md
+- Ver archivo: [descripcion_solucion.md](./descripcion_solucion.md)
