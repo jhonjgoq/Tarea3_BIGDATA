@@ -296,7 +296,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	-rw-rw-r-- 1 vboxuser vboxuser 117M Feb 22 05:17 kafka_2.12-3.9.2.tgz
 	```
 	- Se procede a desempaquetar los binarios de Apache Kafka versión 3.9.2 descomprimiendo como sigue
-	<br> <\br>
+	<br> </br>
 	```bash
 	tar -xzf kafka_2.12-3.9.2.tgz 
 	```
