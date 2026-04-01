@@ -317,7 +317,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 ## Instrucciones de ejecución del flujo operacional de Streaming para Big Data (script Tarea3_kafka_producer.py y Tarea3_streaming_consumer.py)
 	
-	**Resumen del flujo operacional de Streaming para Big Data**
+**Resumen del flujo operacional de Streaming para Big Data**
 	
 | Paso | Proceso | Descripción |
 | :--- | :--- | :--- |	
