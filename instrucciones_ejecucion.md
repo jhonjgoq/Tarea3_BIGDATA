@@ -388,17 +388,27 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     --partitions 1 \
     --replication-factor 1
     ```
-- **Paso 3:** Crear el Topic para el almacén de mensajes.
+	Para comprobar que el Topic `onlineretail_sales` ha sido creado se ejecuta en la terminal el siguiente comando:
     ```bash
-    /opt/Kafka/bin/kafka-topics.sh --create \
-    --topic onlineretail_sales \
-    --bootstrap-server localhost:9092 \
-    --partitions 1 \
-    --replication-factor 1
+    /opt/Kafka/bin/kafka-topics.sh --describe \
+    --topic ventas_online \
+    --bootstrap-server localhost:9092
     ```
+	Como resultado se presenta una descripción detallada del Topic, por ejemplo:
+    ```bash
+    vboxuser@BIGDATA:~$ /opt/Kafka/bin/kafka-topics.sh --describe --topic ventas_online --bootstrap-server localhost:9092
+    Topic: ventas_online    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
+    Topic: ventas_online    Partition: 0    Leader: 0       Replicas: 0    Isr: 0   Elr: N/A        LastKnownElr: N/A
+    ```
+
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**\
 
 
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
+/opt/Kafka/bin/kafka-topics.sh --create \
+--topic ventas_online \
+--bootstrap-server localhost:9092 \
+--partitions 1 \
+--replication-factor 1
