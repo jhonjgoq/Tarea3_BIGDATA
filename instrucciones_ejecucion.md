@@ -278,7 +278,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Se obtiene una sesión PuTTY identificada por `vboxuser@BIGDATA`
 - **Paso 2.** Instalaciones requeridas para iniciar el servidor Kafka
 	- En la terminal `vboxuser@BIGDATA` instalar el paquete `kafka-python`
-	
+	<br> </br>
 	```bash
 	pip install kafka-python
 	```
