@@ -242,7 +242,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		
 - **Paso 2.** Construcción y Ejecución del script Python `Tarea3_batch.py` para el análisis histórico de los datos. 
 	- En la sesión de la terminal vboxuser@BIGDATA se crea el script `Tarea3_batch.py` empleando el editor de texto `nano` como sigue:
-	
+	<br> </br>
 	```bash
 	nano Tarea3_batch.py
 	```
