@@ -292,7 +292,6 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	ls -lh kafka_2.12-3.9.2.tgz 
 	```
 	Como respuesta positiva se debe visualizar los siguiente en la terminal
-	
 	```bash
 	-rw-rw-r-- 1 vboxuser vboxuser 117M Feb 22 05:17 kafka_2.12-3.9.2.tgz
 	```
