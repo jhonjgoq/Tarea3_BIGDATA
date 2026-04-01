@@ -314,7 +314,19 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	sudo mv kafka_2.12-3.9.2 /opt/Kafka
 	```
 	Nota: no olvidar que la contraseña de super usuario es password: `bigdata`
-- **Paso 3.** **Iniciar servicios ZooKeeper**\ 
+	
+## Instrucciones de ejecución del flujo operacional de Streaming para Big Data (script Tarea3_kafka_producer.py y Tarea3_streaming_consumer.py)
+	
+	**Resumen del flujo operacional de Streaming para Big Data**
+	| Paso | Proceso | Descripción |
+	| :--- | :--- | :--- |	
+	| 1 | `Zookeeper` | coordina o gestionar el estado del clúster |
+	| 2 | `Kafka` | inicia el motor de mensajería |
+	| 3 | `Topic` | crea el canal o almacén de mensajes |
+	| 4 | `Producer` | envía datos al Topic |
+	| 5 | `Consumer` | lee los datos del Topic |
+	
+- **Paso 1.** **Iniciar servicios ZooKeeper**\ 
 	Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para encender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
 	
 	```bash
@@ -322,7 +334,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```
 	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
 	
-- **Paso 4.** **Verificar servicios activos de ZooKeeper**\
+- **Paso 1.2.** **Verificar servicios activos de ZooKeeper**\
 	Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.
 	
 	```bash
@@ -337,13 +349,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```
 	**Nota:** esperar al menos 10 segundos antes de iniciar los servicios del servidor Kafka
 	
-- **Paso 5.** **Iniciar el servidor Kafka**\
+- **Paso 2.** **Iniciar el servidor Kafka**\
 	Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
 
 	```bash
 	sudo /opt/Kafka/bin/kafka-server-start.sh /opt/Kafka/config/server.properties &
 	```
-- **Paso 6.** **Verificar servicios activos de Kafka**\
+- **Paso 2.1.** **Verificar servicios activos de Kafka**\
 	Para verificar que los servicios iniciados por `kafka-server-start.sh` están activos se debe verificar que el proceso interno de Kafka denominado `Kafka` está activo se usa `jps` como sigue en bash.
 	
 	```bash
@@ -360,21 +372,24 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
 
-**Resumen del flujo operacional de Streaming para Big Data**
-| Proceso | Descripción |
-| :--- | :--- |	
-| `Zookeeper` | coordina o gestionar el estado del clúster |
-| `Kafka` | inicia el motor de mensajería |
-| `Topic` | crea el canal o almacén de mensajes |
-| `Producer` | envía datos al Topic |
-| `Consumer` | lee los datos del Topic |
-
-## Creación del topic en Kafka, instrucciones de ejecución del script Tarea3_kafka_producer.py y Tarea3_streaming_consumer.py
-- **Paso 1.** **Creación del Topic**\
+- **Paso 3.** **Creación del Topic**\
 	Se requiere construir el canal de comunicación por donde viajan los datos
 	- `--create --topic onlineretail_sales` crea una bandeja de entrada de mensajes llamado `onlineretail_sales`
 	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `onlineretail_sales`
 	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
 	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
+	
+	```bash
+	/opt/Kafka/bin/kafka-topics.sh --create \
+	--topic onlineretail_sales \
+	--bootstrap-server localhost:9092 \
+	--partitions 1 \
+	--replication-factor 1
+	```
+	
+- **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**\
 
+
+
+- **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
