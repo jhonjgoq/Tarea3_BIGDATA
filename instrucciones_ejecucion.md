@@ -342,7 +342,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo /opt/Kafka/bin/kafka-server-start.sh /opt/Kafka/config/server.properties &
 	```
-- **Paso 4.** **Verificar servicios activos de ZooKeeper**\
+- **Paso 4.** **Verificar servicios activos de Kafka**\
 	Para verificar que los servicios iniciados por `kafka-server-start.sh` están activos se debe verificar que el proceso interno de Kafka denominado `Kafka` está activo se usa `jps` como sigue en bash.
 	
 	```bash
