@@ -319,13 +319,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 	**Resumen del flujo operacional de Streaming para Big Data**
 	
-	| Paso | Proceso | Descripción |
-	| :--- | :--- | :--- |	
-	| 1 | `Zookeeper` | coordina o gestionar el estado del clúster |
-	| 2 | `Kafka` | inicia el motor de mensajería |
-	| 3 | `Topic` | crea el canal o almacén de mensajes |
-	| 4 | `Producer` | envía datos al Topic |
-	| 5 | `Consumer` | lee los datos del Topic |
+| Paso | Proceso | Descripción |
+| :--- | :--- | :--- |	
+| 1 | `Zookeeper` | coordina o gestionar el estado del clúster |
+| 2 | `Kafka` | inicia el motor de mensajería |
+| 3 | `Topic` | crea el canal o almacén de mensajes |
+| 4 | `Producer` | envía datos al Topic |
+| 5 | `Consumer` | lee los datos del Topic |
 	
 - **Paso 1.** **Iniciar servicios ZooKeeper**\ 
 	Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para encender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
