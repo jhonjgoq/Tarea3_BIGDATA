@@ -110,17 +110,17 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - Iniciar la máquina virtual BIGDATA desde Oracle VirtualBox
 	- Ingresar con usuario: `vboxuser` y password: `bigdata`
 	- Sincronizar y actualizar lista de paquetes (password: `bigdata`)
-	
+	<br> </br>
 	```bash
 	sudo apt update
 	```
 	- Instalar el paquete virtualbox-guest-utils (password: `bigdata`)
-	
+	<br> </br>
 	```bash
 	sudo apt install virtualbox-guest-utils
 	```
 	- Se requiere reiniciar la máquina virtual BIGDATA
-	
+	<br> </br>
 	```bash
 	sudo reboot
 	```
@@ -128,7 +128,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - Después del reinicio de la máquina virtual BIGDATA	
 	- Ingresar con usuario: `vboxuser` y password: `bigdata`
 	- Agregar el usuario `hadoop` al grupo `vboxsf` para garantizar los permisos de acceso a la carpeta compartida `/media/sf_comp_bigdata`. La contraseña de superusuario es password: `bigdata`
-	
+	<br> </br>
 	```bash
 	sudo usermod -aG vboxsf hadoop
 	```
