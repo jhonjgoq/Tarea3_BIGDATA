@@ -109,10 +109,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	sudo apt update
 	```
 	- Instalar el paquete virtualbox-guest-utils (password: `bigdata`)
+	
 	```bash
 	sudo apt install virtualbox-guest-utils
 	```
 	- Se requiere reiniciar la máquina virtual BIGDATA
+	
 	```bash
 	sudo reboot
 	```
@@ -120,10 +122,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - Después del reinicio de la máquina virtual BIGDATA	
 	- Ingresar con usuario: `vboxuser` y password: `bigdata`
 	- Agregar el usuario `hadoop` al grupo `vboxsf` para garantizar los permisos de acceso a la carpeta compartida `/media/sf_comp_bigdata`. La contraseña de superusuario es password: `bigdata`
+	
 	```bash
 	sudo usermod -aG vboxsf hadoop
 	```
 - Se verifica el proceso accediendo desde la terminal de la máquina virtual BIGDATA al ditrectorio `/media/sf_comp_bigdata` donde se puede visualizar el dataset `online_retail.csv` con la siguiente instrucción.
+	
 	```bash
 	ls /media/sf_comp_bigdata/
 	```
@@ -132,6 +136,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 ## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
 - **Paso 0.** En la terminal de la máquina virtual BIGDATA verificar en la terminal la IP asignada con el siguiente comando:
+	
 	```bash 
 	hostname -I
 	```
@@ -146,15 +151,18 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- `login as: hadoop`
 		- `password: hadoop`
 	- Tras el inicio de la sesión en PuTTY de la terminal `hadoop@BIGDATA` se ubica el dataset `online_retail.csv` en la ruta `/media/sf_comp_bigdata/` el cual define el punto de montaje de la carpeta compartida.
+		
 		```bash
 		ls /media/sf_comp_bigdata/
 		```
 		Resultado en la terminal: `online_retail.csv`
 	- Copiar el dataset `online_retail.csv` de la carptea compartida a la carpeta `/home/hadoop`
+		
 		```bash
 		cp /media/sf_comp_bigdata/online_retail.csv /home/hadoop/
 		```
 		Se verifica que se ha copiado de forma exitosa con el comando
+		
 		```bash
 		ls /home/hadoop/
 		```
@@ -162,10 +170,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		   
 - **Paso 2.** Se inician los servicios del clúster de Hadoop en la sesión de PuTTY `hadoop@BIGDATA` 
 	- En la terminal se incian los servicios Hadoop con la siguiente instrucción.
+		
 		```bash
 		start-all.sh
 		```
 	- Se confirma que los servicios están activos con el siguiente comando.
+		
 		```bash
 		jps
 		```
@@ -184,18 +194,22 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 - **Paso 3.** Creación del directorio `Tarea3` y agregación del dataset `online_retail.csv` en el sistema de almacenamiento distribuido HDFS. 
 	- Se crea desde la terminal sesión de PuTTY `hadoop@BIGDATA` el directorio Tarea3 en el sistema HDFS
+		
 		```bash
 		hdfs dfs -mkdir /Tarea3
 		```
 	- Se mueve el dataset `online_retail.csv` descargado y copiado hacia el directorio HDFS creado `/Tarea3`
+		
 		```bash
 		hdfs dfs -put /home/hadoop/online_retail.csv /Tarea3/
 		```
 	- Se valida que el dataset (online_retail.csv) este en la lista de archivos HDFS
+		
 		```bash
 		hdfs dfs -ls /Tarea3
 		```
 	- Como resultado se debe tener algo simialar a:
+		
 		```bash
 		-rw-r--r--   1 hadoop supergroup   49543683 2026-03-29 04:18 /Tarea3/online_retail.csv
 		```
@@ -222,6 +236,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		
 - **Paso 2.** Construcción y Ejecución del script Python `Tarea3_batch.py` para el análisis histórico de los datos. 
 	- En la sesión de la terminal vboxuser@BIGDATA se crea el script `Tarea3_batch.py` empleando el editor de texto `nano` como sigue:
+	
 	```bash
 	nano Tarea3_batch.py
 	```
@@ -234,6 +249,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- Se usa la combinación CTRL + O para cerrar el editor nano.
 		   
 	- Se ejecuta el script `Tarea3_batch.py` con el código fuente del análisis Batch
+	
 	```bash
 	python3 Tarea3_batch.py
 	```
@@ -256,26 +272,32 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Se obtiene una sesión PuTTY identificada por `vboxuser@BIGDATA`
 - **Paso 2.** Instalaciones requeridas para iniciar el servidor Kafka
 	- En la terminal `vboxuser@BIGDATA` instalar el paquete `kafka-python`
+	
 	```bash
 	pip install kafka-python
 	```
 	Nota: se puede comprobar la instalación de `kafka-python` con el siguiente comando bash
+	
 	```bash
 	pip-list | grep kafka-python
 	```
 	- Se procede a descargar la distribución binaria de Apache Kafka versión 3.9.2 desde la URL: https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz con la siguiente instrucción en la terminal bash de la sesión PuTTY.
+	
 	```bash
 	wget -c https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz
 	```
 	Nota: la descarga se almacena en el directorio actual de trabajo de la terminal, para comprobar que el paquete de binarios `kafka_2.12-3.9.2.tgz` se encuentra basta ejecutar
+	
 	```bash
 	ls -lh kafka_2.12-3.9.2.tgz 
 	```
 	Como respuesta positiva se debe visualizar los siguiente en la terminal
+	
 	```bash
 	-rw-rw-r-- 1 vboxuser vboxuser 117M Feb 22 05:17 kafka_2.12-3.9.2.tgz
 	```
 	- Se procede a desempaquetar los binarios de Apache Kafka versión 3.9.2 descomprimiendo como sigue
+	
 	```bash
 	tar -xzf kafka_2.12-3.9.2.tgz 
 	```
