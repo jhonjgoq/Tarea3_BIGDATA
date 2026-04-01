@@ -289,12 +289,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo /opt/Kafka/bin/zookeeper-server-start.sh /opt/Kafka/config/zookeeper.properties &
 	```
+	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.\
 	**Verificar servicios activos de ZooKeeper**\
 	Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.\
 	```bash
 	sudo jps
 	```
-	Resultado ejemplo en la terminal despues de aplicar `sudo jps`:
+	Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper está activo:
 	```bash
 	vboxuser@BIGDATA:~$ sudo jps
 	2144 Jps
