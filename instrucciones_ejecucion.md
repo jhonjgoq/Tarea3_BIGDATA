@@ -288,7 +288,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	pip-list | grep kafka-python
 	```
 	- Se procede a descargar la distribución binaria de Apache Kafka versión 3.9.2 desde la URL: https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz con la siguiente instrucción en la terminal bash de la sesión PuTTY.
-	
+	<br> </br>
 	```bash
 	wget -c https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz
 	```
@@ -303,7 +303,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	-rw-rw-r-- 1 vboxuser vboxuser 117M Feb 22 05:17 kafka_2.12-3.9.2.tgz
 	```
 	- Se procede a desempaquetar los binarios de Apache Kafka versión 3.9.2 descomprimiendo como sigue
-	
+	<br> </br>
 	```bash
 	tar -xzf kafka_2.12-3.9.2.tgz 
 	```
