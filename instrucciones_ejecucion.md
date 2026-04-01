@@ -388,7 +388,14 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	--partitions 1 \
 	--replication-factor 1
 	```
-	
+- **Paso 3:** Crear el Topic para el almacén de mensajes.
+    ```bash
+    /opt/Kafka/bin/kafka-topics.sh --create \
+    --topic onlineretail_sales \
+    --bootstrap-server localhost:9092 \
+    --partitions 1 \
+    --replication-factor 1
+    ```
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**\
 
 
