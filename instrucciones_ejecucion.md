@@ -357,4 +357,24 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	4963 Jps
 	4493 Kafka
 	```
-## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
+	
+	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
+
+**Resumen del flujo operacional de Streaming para Big Data**
+| Proceso | Descripción |
+| :--- | :--- |	
+| `Zookeeper` | coordina o gestionar el estado del clúster |
+| `Kafka` | inicia el motor de mensajería |
+| `Topic` | crea el canal o almacén de mensajes |
+| `Producer` | envía datos al Topic |
+| `Consumer` | lee los datos del Topic |
+
+## Creación del topic en Kafka, instrucciones de ejecución del script Tarea3_kafka_producer.py y Tarea3_streaming_consumer.py
+- **Paso 1.** **Creación del Topic**\
+	Se requiere construir el canal de comunicación por donde viajan los datos
+	- `--create --topic onlineretail_sales` crea una bandeja de entrada de mensajes llamado `onlineretail_sales`
+	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `onlineretail_sales`
+	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
+	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
+
+
