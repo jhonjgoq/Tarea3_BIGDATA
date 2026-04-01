@@ -278,44 +278,44 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Se obtiene una sesión PuTTY identificada por `vboxuser@BIGDATA`
 - **Paso 2.** Instalaciones requeridas para iniciar el servidor Kafka
 	- En la terminal `vboxuser@BIGDATA` instalar el paquete `kafka-python`
-	<br> </br>
+	&nbsp;
 	```bash
 	pip install kafka-python
 	```
 	Nota: se puede comprobar la instalación de `kafka-python` con el siguiente comando bash
-	<br> </br>
+	&nbsp;
 	```bash
 	pip-list | grep kafka-python
 	```
 	- Se procede a descargar la distribución binaria de Apache Kafka versión 3.9.2 desde la URL: https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz con la siguiente instrucción en la terminal bash de la sesión PuTTY.
-	<br> </br>
+	&nbsp;
 	```bash
 	wget -c https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz
 	```
 	Nota: la descarga se almacena en el directorio actual de trabajo de la terminal, para comprobar que el paquete de binarios `kafka_2.12-3.9.2.tgz` se encuentra basta ejecutar
-	<br> </br>
+	&nbsp;
 	```bash
 	ls -lh kafka_2.12-3.9.2.tgz 
 	```
 	Como respuesta positiva se debe visualizar los siguiente en la terminal
-	<br> </br>
+	&nbsp;
 	```bash
 	-rw-rw-r-- 1 vboxuser vboxuser 117M Feb 22 05:17 kafka_2.12-3.9.2.tgz
 	```
 	- Se procede a desempaquetar los binarios de Apache Kafka versión 3.9.2 descomprimiendo como sigue
-	<br> </br>
+	&nbsp;
 	```bash
 	tar -xzf kafka_2.12-3.9.2.tgz 
 	```
 	Como resultado se crea un nuevo directorio llamado `kafka_2.12-3.9.2`
 	- Ahora se debe mover con permisos de super usuario la carpeta `kafka_2.12-3.9.2` a la ruta `/opt` para este caso al mover se renobra el directorio como `Kafka`
-	<br> </br>
+	&nbsp;
 	```bash
 	sudo mv kafka_2.12-3.9.2 /opt/Kafka
 	```
 	Nota: no olvidar que la contraseña de super usuario es password: `bigdata`
 - **Paso 3.** Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para enender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
-	<br> </br>
+	&nbsp;
 	```bash
 	sudo /opt/Kafka/bin/zookeeper-server-start.sh /opt/Kafka/config/zookeeper.properties &
 	```
@@ -327,7 +327,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	sudo jps
 	```
 	Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper está activo:
-	<br> </br>
+	&nbsp;
 	```bash
 	vboxuser@BIGDATA:~$ sudo jps
 	2144 Jps
