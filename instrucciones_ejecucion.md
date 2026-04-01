@@ -348,11 +348,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	sudo jps
 	```
-	Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper y `Kafka` está activo:
+	Resultado ejemplo en la terminal después de aplicar `sudo jps`, permite confirmar que `QuorumPeerMain` y `Kafka` están activos:
 	
 	```bash
 	vboxuser@BIGDATA:~$ sudo jps
-	2144 Jps
-	1721 QuorumPeerMain
+	4050 QuorumPeerMain
+	4963 Jps
+	4493 Kafka
 	```
 ## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
