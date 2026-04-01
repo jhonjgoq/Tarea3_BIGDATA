@@ -322,7 +322,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.\
 	**Verificar servicios activos de ZooKeeper**\
 	Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.\
-	<br> </br>
+	&nbsp;
 	```bash
 	sudo jps
 	```
