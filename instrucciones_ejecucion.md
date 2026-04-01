@@ -63,17 +63,17 @@
   
 En la práctica se usa Jupyter Notebook desde Windows para descargar el dataset, luego empleando una carpeta compartida entre Windows y la máquina virtual BIGDATA se tranfiere el dataset `online_retail.csv` al directorio `/home/hadoop/` para iniciar el análisis de datos históricos (Batch) usando Hadoop y Spark. Para conseguir esto seguir las siguientes indicaciones: 
 - En terminal PowerShell se instala el paquete Python de kagglehub
-<br> </br>
+
 ```powershell
 pip install kagglehub
 ```
 - Se inicia Jupyter Notebook desde PowerShell
-<br> </br>
+
 ```powershell
 jupyter notebook
 ```
 - En una sesión notebook de Jupyter usando Python se importa la librería kagglehub y se descarga el dataset
-<br> </br>
+
 ```python
 import kagglehub
 path = kagglehub.dataset_download("thedevastator/online-retail-sales-and-customer-data")
@@ -84,7 +84,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 **Nota:** el nombre del usuario (TuUsuario) varía según la configuración de usuario de Windows.
 		
 - Se crea una carpeta compartida entre Windows y la máquina virtual BIGDATA desde PowerShell
-	<br> </br>
+	
 	```powershell
 	mkdir C:\Users\TuUsuario\Documents\comp_bigdata
 	```
@@ -99,7 +99,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		+ Clic en Automontar
 		+ Clic en Aceptar
 - Se copia el Dataset (online_retail.csv) a la carpeta compartida desde la ruta de descarga con la siguiente instrucción en PowerShell:
-	<br> </br>
+	
 	```powershell
 	cp C:\Users\TuUsuario\.cache\kagglehub\datasets\thedevastator\online-retail-sales-and-customer-data\versions\1\online_retail.csv C:\Users\TuUsuario\Documents\comp_bigdata\
 	```
@@ -110,17 +110,17 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - Iniciar la máquina virtual BIGDATA desde Oracle VirtualBox
 	- Ingresar con usuario: `vboxuser` y password: `bigdata`
 	- Sincronizar y actualizar lista de paquetes (password: `bigdata`)
-	<br> </br>
+	
 	```bash
 	sudo apt update
 	```
 	- Instalar el paquete virtualbox-guest-utils (password: `bigdata`)
-	<br> </br>
+	
 	```bash
 	sudo apt install virtualbox-guest-utils
 	```
 	- Se requiere reiniciar la máquina virtual BIGDATA
-	<br> </br>
+	
 	```bash
 	sudo reboot
 	```
@@ -128,12 +128,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - Después del reinicio de la máquina virtual BIGDATA	
 	- Ingresar con usuario: `vboxuser` y password: `bigdata`
 	- Agregar el usuario `hadoop` al grupo `vboxsf` para garantizar los permisos de acceso a la carpeta compartida `/media/sf_comp_bigdata`. La contraseña de superusuario es password: `bigdata`
-	<br> </br>
+	
 	```bash
 	sudo usermod -aG vboxsf hadoop
 	```
 - Se verifica el proceso accediendo desde la terminal de la máquina virtual BIGDATA al ditrectorio `/media/sf_comp_bigdata` donde se puede visualizar el dataset `online_retail.csv` con la siguiente instrucción.
-	<br> </br>
+	
 	```bash
 	ls /media/sf_comp_bigdata/
 	```
@@ -142,7 +142,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 ## Iniciar servicios de Hadoop y cargar el dataset al sistema HDFS 
 
 - **Paso 0.** En la terminal de la máquina virtual BIGDATA verificar en la terminal la IP asignada con el siguiente comando:
-	<br> </br>
+	
 	```bash 
 	hostname -I
 	```
@@ -157,18 +157,18 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- `login as: hadoop`
 		- `password: hadoop`
 	- Tras el inicio de la sesión en PuTTY de la terminal `hadoop@BIGDATA` se ubica el dataset `online_retail.csv` en la ruta `/media/sf_comp_bigdata/` el cual define el punto de montaje de la carpeta compartida.
-		<br> </br>
+		
 		```bash
 		ls /media/sf_comp_bigdata/
 		```
 		Resultado en la terminal: `online_retail.csv`
 	- Copiar el dataset `online_retail.csv` de la carptea compartida a la carpeta `/home/hadoop`
-		<br> </br>
+		
 		```bash
 		cp /media/sf_comp_bigdata/online_retail.csv /home/hadoop/
 		```
 		Se verifica que se ha copiado de forma exitosa con el comando
-		<br> </br>
+		
 		```bash
 		ls /home/hadoop/
 		```
@@ -176,12 +176,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		   
 - **Paso 2.** Se inician los servicios del clúster de Hadoop en la sesión de PuTTY `hadoop@BIGDATA` 
 	- En la terminal se incian los servicios Hadoop con la siguiente instrucción.
-		<br> </br>
+		
 		```bash
 		start-all.sh
 		```
 	- Se confirma que los servicios están activos con el siguiente comando.
-		<br> </br>
+		
 		```bash
 		jps
 		```
@@ -200,22 +200,22 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 - **Paso 3.** Creación del directorio `Tarea3` y agregación del dataset `online_retail.csv` en el sistema de almacenamiento distribuido HDFS. 
 	- Se crea desde la terminal sesión de PuTTY `hadoop@BIGDATA` el directorio Tarea3 en el sistema HDFS
-		<br> </br>
+		
 		```bash
 		hdfs dfs -mkdir /Tarea3
 		```
 	- Se mueve el dataset `online_retail.csv` descargado y copiado hacia el directorio HDFS creado `/Tarea3`
-		<br> </br>
+		
 		```bash
 		hdfs dfs -put /home/hadoop/online_retail.csv /Tarea3/
 		```
 	- Se valida que el dataset (online_retail.csv) este en la lista de archivos HDFS
-		<br> </br>
+		
 		```bash
 		hdfs dfs -ls /Tarea3
 		```
 	- Como resultado se debe tener algo simialar a:
-		<br> </br>
+		
 		```bash
 		-rw-r--r--   1 hadoop supergroup   49543683 2026-03-29 04:18 /Tarea3/online_retail.csv
 		```
@@ -242,7 +242,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		
 - **Paso 2.** Construcción y Ejecución del script Python `Tarea3_batch.py` para el análisis histórico de los datos. 
 	- En la sesión de la terminal vboxuser@BIGDATA se crea el script `Tarea3_batch.py` empleando el editor de texto `nano` como sigue:
-	<br> </br>
+	
 	```bash
 	nano Tarea3_batch.py
 	```
@@ -255,7 +255,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- Se usa la combinación CTRL + O para cerrar el editor nano.
 		   
 	- Se ejecuta el script `Tarea3_batch.py` con el código fuente del análisis Batch
-	<br> </br>
+	
 	```bash
 	python3 Tarea3_batch.py
 	```
