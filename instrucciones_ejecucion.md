@@ -379,7 +379,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
 	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
 	Con la instrucción a continuación en bash se construye el almacen de mensajes
-	
+	<br> </br>
 	```bash
 	/opt/Kafka/bin/kafka-topics.sh --create \
 	--topic onlineretail_sales \
