@@ -302,7 +302,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```
 	Como resultado se crea un nuevo directorio llamado `kafka_2.12-3.9.2`
 	- Ahora se debe mover con permisos de super usuario la carpeta `kafka_2.12-3.9.2` a la ruta `/opt` para este caso al mover se renobra el directorio como `Kafka`
-	
+	<br> </br>
 	```bash
 	sudo mv kafka_2.12-3.9.2 /opt/Kafka
 	```
