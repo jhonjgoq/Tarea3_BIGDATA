@@ -378,6 +378,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `onlineretail_sales`
 	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
 	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
+	Con la instrucción a continuación en bash se construye el almacen de mensajes
 	
 	```bash
 	/opt/Kafka/bin/kafka-topics.sh --create \
