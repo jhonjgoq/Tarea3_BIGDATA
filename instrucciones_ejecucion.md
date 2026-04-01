@@ -281,21 +281,25 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```
 	Como resultado se crea un nuevo directorio llamado `kafka_2.12-3.9.2`
 	- Ahora se debe mover con permisos de super usuario la carpeta `kafka_2.12-3.9.2` a la ruta `/opt` para este caso al mover se renobra el directorio como `Kafka`
+	
 	```bash
 	sudo mv kafka_2.12-3.9.2 /opt/Kafka
 	```
 	Nota: no olvidar que la contraseña de super usuario es password: `bigdata`
 - **Paso 3.** Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para enender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
+	
 	```bash
 	sudo /opt/Kafka/bin/zookeeper-server-start.sh /opt/Kafka/config/zookeeper.properties &
 	```
 	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.\
 	**Verificar servicios activos de ZooKeeper**\
 	Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.\
+	
 	```bash
 	sudo jps
 	```
 	Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper está activo:
+	
 	```bash
 	vboxuser@BIGDATA:~$ sudo jps
 	2144 Jps
