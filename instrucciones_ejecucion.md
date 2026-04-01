@@ -336,13 +336,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	1721 QuorumPeerMain
 	```
 	
-- **paso 5.** **Iniciar el servidor Kafka**
+- **Paso 5.** **Iniciar el servidor Kafka**
 	Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
 
 	```bash
 	sudo /opt/Kafka/bin/kafka-server-start.sh /opt/Kafka/config/server.properties &
 	```
-- **Paso 4.** **Verificar servicios activos de Kafka**\
+- **Paso 6.** **Verificar servicios activos de Kafka**\
 	Para verificar que los servicios iniciados por `kafka-server-start.sh` están activos se debe verificar que el proceso interno de Kafka denominado `Kafka` está activo se usa `jps` como sigue en bash.
 	
 	```bash
