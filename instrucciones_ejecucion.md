@@ -381,13 +381,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
 	Con la instrucción a continuación en bash se construye el almacen de mensajes
 	<br> </br>
-	```bash
-	/opt/Kafka/bin/kafka-topics.sh --create \
-	--topic onlineretail_sales \
-	--bootstrap-server localhost:9092 \
-	--partitions 1 \
-	--replication-factor 1
-	```
+```bash
+/opt/Kafka/bin/kafka-topics.sh --create \
+--topic onlineretail_sales \
+--bootstrap-server localhost:9092 \
+--partitions 1 \
+--replication-factor 1
+```
 	
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**\
 
