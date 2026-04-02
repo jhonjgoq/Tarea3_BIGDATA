@@ -436,13 +436,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ["unit Kingdom", "France", "Germany"]
     ```
 	
-	- En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el paquete `Pandas` para generar el diccionario que referencia la simulación de datos aleatorios de ventas online.
-    
+	- En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el paquete `Pandas` para generar el diccionario que referencia la simulación de datos aleatorios de ventas online.  
+	
     ```bash
     pip3 install pandas
     ```
 
-	- Con el editor de `nano` crear el script `generar_metadata.py` generador del dicionario `metadata_onlineretail.json` en la sesión PuTTY `vboxuser@BIGDATA` usando el comando:
+	- Con el editor de `nano` crear el script `generar_metadata.py` generador del dicionario `metadata_onlineretail.json` en la sesión PuTTY `vboxuser@BIGDATA` usando el comando:  
 	
     ```bash
     nano generar_metadata.py 	
