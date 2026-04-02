@@ -399,12 +399,14 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     --replication-factor 1
     ```
 	Para comprobar que el Topic `onlineretail_sales` ha sido creado se ejecuta en la terminal el siguiente comando:
+	
     ```bash
     /opt/Kafka/bin/kafka-topics.sh --describe \
     --topic onlineretail_sales \
     --bootstrap-server localhost:9092
     ```
 	Como resultado se presenta una descripción detallada del Topic, por ejemplo:
+	
     ```bash
     vboxuser@BIGDATA:~$ /opt/Kafka/bin/kafka-topics.sh --describe --topic onlineretail_sales --bootstrap-server localhost:9092
     Topic: onlineretail_sales    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
