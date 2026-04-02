@@ -423,7 +423,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
 		
 	- Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:  
-		
+	
 	```json
     {
     "1234A": 9.45,
@@ -431,7 +431,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     }
     ```
 	- Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:  
-        
+	
     ```json
     ["unit Kingdom", "France", "Germany"]
     ```		
