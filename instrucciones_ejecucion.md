@@ -420,21 +420,21 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	
 	Se procede a generar un diccionario con los valores únicos de las columnas `StockCode`, `UnitPrice` y `Country` para referenciar la simulación de un generador de datos aleatorios de ventas online que toma como elementos de dominio las listas con los valores únicos de cada columna. Sin embargo, se tienen las siguientes consideraciones:
 		
-		- Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
+	- Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
 		
-		- Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:  
+	- Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:  
 		
-	    ```json
-        {
-        "1234A": 9.45,
-        "2344B": 25.67
-        }
-        ```
-		- Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:  
+	```json
+    {
+    "1234A": 9.45,
+    "2344B": 25.67
+    }
+    ```
+	- Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:  
         
-        ```json
-        ["unit Kingdom", "France", "Germany"]
-        ```		
+    ```json
+    ["unit Kingdom", "France", "Germany"]
+    ```		
 
 
 
