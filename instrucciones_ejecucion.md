@@ -290,12 +290,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- En la terminal `vboxuser@BIGDATA` instalar el paquete `kafka-python`
 	<br> </br>
     ```bash
-    pip install kafka-python
+    pip3 install kafka-python
     ```
 	Nota: se puede comprobar la instalación de `kafka-python` con el siguiente comando bash
 	
     ```bash
-    pip-list | grep kafka-python
+    pip3 list | grep kafka-python
     ```
 	- Se procede a descargar la distribución binaria de Apache Kafka versión 3.9.2 desde la URL: https://downloads.apache.org/kafka/3.9.2/kafka_2.12-3.9.2.tgz con la siguiente instrucción en la terminal bash de la sesión PuTTY.
 	<br> </br>
