@@ -442,12 +442,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
         - Las columnas `StockCode` y `UnitPrice` están relacionadas.
         - Las columnas se relacionan mediante la estructura clave-valor, por ejemplo:
 
-            ```json
-            {
-              "1234A": 9.45,
-              "2344B": 25.67
-            }
-            ```	
+        ```json
+        {
+        "1234A": 9.45,
+        "2344B": 25.67
+        }
+        ```	
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
