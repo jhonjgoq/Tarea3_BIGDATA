@@ -359,7 +359,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     1721 QuorumPeerMain
     ```
 	**Nota:** esperar al menos 10 segundos antes de iniciar los servicios del servidor Kafka
-	
+	<br> </br>
 - **Paso 2.** **Iniciar el servidor Kafka**\
 	Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
 
