@@ -436,8 +436,50 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ["unit Kingdom", "France", "Germany"]
     ```
 	
-	- En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el  
+	- En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el paquete `Pandas` para generar el diccionario que referencia la simulación de datos aleatorios de ventas online.
+    
+    ```bash
+    pip3 install pandas
+    ```
 
+	- Con el editor de `nano` crear el script `generar_metadata.py` generador del dicionario `metadata_onlineretail.json` en la sesión PuTTY `vboxuser@BIGDATA` usando el comando:
+	
+    ```bash
+    nano generar_metadata.py 	
+	```
+	- Copiar el siguiente código fuente Python dentro del editor `nano` y se guarda con `CTRL + O` => Pulsar tecla Intro => cerrar el editor nano con `CTRL + X`
+    ```python
+    # Generador del diccionario referencia de la simulación de ventas online
+    
+    import pandas as pd
+    import json
+    # Directorio donde se encuentra el dataset online_retail.csv
+    path = '/home/vboxuser/online_retail.csv'
+    # Carga del dataset como dataframe
+    df = pd.read_csv(path, encoding='ISO-8859-1')
+    
+    # Limpieza de valores nulos
+    df = df.dropna(subset=['StockCode', 'UnitPrice', 'Country'])
+    
+    # Limpieza que preserva valores positivos
+    df = df[df['UnitPrice'] > 0]
+    
+    #Extraer valores únicos del dataframe
+    metadata = {
+		"price_by_stockcode": df.groupby('StockCode')['UnitPrice'].mean().round(2).to_dict(),
+		"countries": df['Country'].unique().tolist()
+    }
+    # Guardar archivo json
+    with open('metadata_onlineretail.json', 'w') as f:
+		json.dump(metadata, f)
+    
+    print("Archivo metadata_onlineretail.json generado correctamente")
+    ```	
+	- Al ejecutar el script `generar_metadata.py` se generará el archivo `metadata_onlineretail.json` partiendo del dataset `online_retail.csv`
+	
+	```bash
+    nano generar_metadata.py 	
+	```
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
