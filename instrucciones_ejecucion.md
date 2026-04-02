@@ -412,7 +412,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     Topic: ventas_online    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
     Topic: ventas_online    Partition: 0    Leader: 0       Replicas: 0    Isr: 0   Elr: N/A        LastKnownElr: N/A
     ```
-  <br> <\br>
+  <br> </br>
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**
   - **Preliminares:** **Creación del diccionario de datos** que referencia la simulación de datos aleatorios de ventas online desde un archivo JSON.
   
