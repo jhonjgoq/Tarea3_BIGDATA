@@ -448,7 +448,8 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     nano generar_metadata.py 	
 	```
 	- Copiar el siguiente código fuente Python dentro del editor `nano` y se guarda con `CTRL + O` => Pulsar tecla Intro => cerrar el editor nano con `CTRL + X`
-    ```python
+    
+	```python
     # Generador del diccionario referencia de la simulación de ventas online
     
     import pandas as pd
