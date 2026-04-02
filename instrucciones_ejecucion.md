@@ -404,7 +404,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**
 	- Preliminares: **Creación del diccionario de datos** que referencia la simulación de datos aleatorios de ventas online.
 	<br> </br>
-	Tomando como referencia el dataset `online_retail.csv` objeto de estudio obtenido de la carpeta compartida con punto de montaje `/media/sf_comp_bigdata/`, el cual, tenemos una copia en el directorio `/home/vboxuser/`. \ 
+	Tomando como referencia el dataset `online_retail.csv` objeto de estudio obtenido de la carpeta compartida con punto de montaje `/media/sf_comp_bigdata/`, el cual, tenemos una copia en el directorio `/home/vboxuser/`.  
 	Se procede a generar un diccionario con los valores únicos de las columnas `StockCode`, `UnitPrice` y `Country` para referenciar la simulación de un generador de datos aleatorios de ventas online.   
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
