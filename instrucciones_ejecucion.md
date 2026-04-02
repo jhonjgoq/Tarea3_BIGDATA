@@ -422,81 +422,6 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
   
   - Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
   
-  - Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:  
-  
-  ```json
-  {
-  "1234A": 9.45,
-  "2344B": 25.67
-  }
-  ```
-  
-  - Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:
-  
-  ```json
-  ["unit Kingdom", "France", "Germany"]
-  ```
-  
-  - En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el paquete `Pandas` para generar el diccionario que referencia la simulación de datos aleatorios de ventas online.  
-  
-  ```bash
-  pip3 install pandas
-  ```
-  
-  - Con el editor de `nano` crear el script `generar_metadata.py` generador del dicionario `metadata_onlineretail.json` en la sesión PuTTY `vboxuser@BIGDATA` usando el comando:
-  
-  ```bash
-  nano generar_metadata.py
-  ```
-  
-  - Copiar el siguiente código fuente Python dentro del editor `nano` y se guarda con `CTRL + O` => Pulsar tecla Intro => cerrar el editor nano con `CTRL + X`.
-  
-  ```python
-  # Generador del diccionario referencia de la simulación de ventas online
-  
-  import pandas as pd
-  import json
-  
-  # Directorio donde se encuentra el dataset online_retail.csv
-  path = '/home/vboxuser/online_retail.csv'
-  
-  # Carga del dataset como dataframe
-  df = pd.read_csv(path, encoding='ISO-8859-1')
-  
-  # Limpieza de valores nulos
-  df = df.dropna(subset=['StockCode', 'UnitPrice', 'Country'])
-  
-  # Limpieza que preserva valores positivos
-  df = df[df['UnitPrice'] > 0]
-  
-  #Extraer valores únicos del dataframe
-  metadata = {
-	"price_by_stockcode": df.groupby('StockCode')['UnitPrice'].mean().round(2).to_dict(),
-	"countries": df['Country'].unique().tolist()
-	}
-  # Guardar archivo json
-  with open('metadata_onlineretail.json', 'w') as f:
-	json.dump(metadata, f)
-	
-  print("Archivo metadata_onlineretail.json generado correctamente")
-  ```
-  
-  - Al ejecutar el script `generar_metadata.py` se generará el archivo `metadata_onlineretail.json` partiendo del dataset `online_retail.csv`.
-  
-  ```bash
-  nano generar_metadata.py
-  ```
-
-
-- **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**
-  - **Preliminares:** **Creación del diccionario de datos** que referencia la simulación de datos aleatorios de ventas online desde un archivo JSON.
-  
-  Tomando como referencia el dataset `online_retail.csv` objeto de estudio obtenido de la carpeta compartida con punto de montaje `/media/sf_comp_bigdata/`, el cual, tenemos una copia en el directorio `/home/vboxuser/`.
-  
-  Se procede a generar un diccionario con los valores únicos de las columnas `StockCode`, `UnitPrice` y `Country` para referenciar la simulación de un generador de datos aleatorios de ventas online que toma como elementos de dominio las listas con los valores únicos de cada columna. Sin embargo, se tienen las siguientes consideraciones:
-  
-  - Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
-  
   - Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:
   
     ```json
@@ -560,7 +485,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
   - Al ejecutar el script `generar_metadata.py` se generará el archivo `metadata_onlineretail.json` partiendo del dataset `online_retail.csv`.
   
     ```bash
-    nano generar_metadata.py
+    python3 generar_metadata.py
     ```
 
 
