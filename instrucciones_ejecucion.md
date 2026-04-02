@@ -505,8 +505,9 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     - `UnitPrice`: referencia su asignación en el valor que se corresponde con la clave asignada para `StockCode`.
     - `TotalPrice`: resulta del producto de `Quantity` y `UnitPrice`.
     - `Country`: toma aleatoriamente un elemento de la lista `countries` contenida en el diccionario `metadata_onlineretail.json`.
-    - `InvoiceDate`: asigna la fecha y hora del sistema (formato string) en el instante de ejecución continua de datos del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py).
-  Nota: la ejecución del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) depende de la generación del archivo JSON llamado `metadata_onlineretail.json`.
+    - `InvoiceDate`: asigna la fecha y hora del sistema (formato string) en el instante de generación continua de datos.
+  
+  Nota: la ejecución del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) requiere estrictamente de la generación del archivo JSON llamado `metadata_onlineretail.json`.
   
   Para iniciar la generación continua de datos se ejecuta en la terminal PuTTY `vboxuser@BIGDATA` el siguiente comando:
   
