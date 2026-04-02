@@ -494,7 +494,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     python3 generar_metadata.py
     ```
   
-  - **Ejecución de simulador de Ventas Online** soportado en el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py)
+  - **Ejecución de simulador de Ventas Online** soportado en el script `Tarea3_kafka_producer.py`
   
   Una vez que se ha creado el archivo `metadata_onlineretail.json` se procede a ejecutar el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) para iniciar la generación de datos.
   
@@ -515,7 +515,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     python3 Tarea3_kafka_producer.py
     ```
   
-  Nota: el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) envia al almacén de datos (Topic `ventas_online`) los datos en formato JSON.
+  Nota: el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) envia al almacén de datos (Topic `ventas_online`) los datos simulados en formato JSON.
   
   La sesión de la terminal PuTTY donde se ejecutó el script `Tarea3_kafka_producer.py` se mantiene ejecutándose sin cerrarla para simular que se están generando transacciones de ventas online en tiempo real.
   
