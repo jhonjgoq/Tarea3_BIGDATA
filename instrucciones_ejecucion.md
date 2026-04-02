@@ -407,6 +407,11 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
+    ```bash
+	spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.8 Tarea3_streaming_consumer.py
+	```
+
+
 /opt/Kafka/bin/kafka-topics.sh --create \
 --topic ventas_online \
 --bootstrap-server localhost:9092 \

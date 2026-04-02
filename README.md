@@ -45,8 +45,8 @@ A continuación, se presenta una descripción de los script creados para ejecuta
 | Script | Descripción |
 | :--- | :--- |
 | [Tarea3_batch.py](./Tarea3_batch.py) | Análisis datos históricos (Batch) con Apache Spark y Hadoop HDFS |
-| kafka_producer.py | Generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming) |
-| Tarea3_streaming.py | Análisis de procesamiento en tiempo real (Streaming) con Apache Spark y Apache Kafka |
+| [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) | Generador de datos aleatorios que alimenta el análisis en tiempo real (Streaming) |
+| [tarea_streaming_consumer.py](./Tarea3_streaming_consumer.py | Análisis de procesamiento en tiempo real (Streaming) con Apache Spark y Apache Kafka |
 	
 ---
 ## Ejecución de la solución
