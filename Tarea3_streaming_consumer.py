@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, window, sum, round, to_timestamp 
+from pyspark.sql.functions import from_json, col, window, sum, round, to_timestamp, avg, count 
 from pyspark.sql.types import StructType, StructField, IntegerType, DoubleType, StringType
 import logging
 
