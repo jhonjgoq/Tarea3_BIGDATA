@@ -385,32 +385,32 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 
 - **Paso 3.** **Creación del Topic**\
 	Se requiere construir el canal de comunicación por donde viajan los datos
-	- `--create --topic onlineretail_sales` crea una bandeja de entrada de mensajes llamado `onlineretail_sales`
-	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `onlineretail_sales`
+	- `--create --topic ventas_online` crea una bandeja de entrada de mensajes llamado `ventas_online`
+	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `ventas_online`
 	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
 	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
 	Con la instrucción a continuación en bash se construye el almacen de mensajes
 	<br> </br>
     ```bash
     /opt/Kafka/bin/kafka-topics.sh --create \
-    --topic onlineretail_sales \
+    --topic ventas_online \
     --bootstrap-server localhost:9092 \
     --partitions 1 \
     --replication-factor 1
     ```
-	Para comprobar que el Topic `onlineretail_sales` ha sido creado se ejecuta en la terminal el siguiente comando:
+	Para comprobar que el Topic `ventas_online` ha sido creado se ejecuta en la terminal el siguiente comando:
 	
     ```bash
     /opt/Kafka/bin/kafka-topics.sh --describe \
-    --topic onlineretail_sales \
+    --topic ventas_online \
     --bootstrap-server localhost:9092
     ```
 	Como resultado se presenta una descripción detallada del Topic, por ejemplo:
 	
     ```bash
-    vboxuser@BIGDATA:~$ /opt/Kafka/bin/kafka-topics.sh --describe --topic onlineretail_sales --bootstrap-server localhost:9092
-    Topic: onlineretail_sales    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
-    Topic: onlineretail_sales    Partition: 0    Leader: 0       Replicas: 0    Isr: 0   Elr: N/A        LastKnownElr: N/A
+    vboxuser@BIGDATA:~$ /opt/Kafka/bin/kafka-topics.sh --describe --topic ventas_online --bootstrap-server localhost:9092
+    Topic: ventas_online    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
+    Topic: ventas_online    Partition: 0    Leader: 0       Replicas: 0    Isr: 0   Elr: N/A        LastKnownElr: N/A
     ```
 
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**
@@ -493,6 +493,28 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```bash
     python3 generar_metadata.py
     ```
+  
+  - **Ejecución de simulador de Ventas Online** soportado en el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py)
+  
+  Una vez que se ha creado el archivo `metadata_onlineretail.json` se procede a ejecutar el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) para iniciar la generación de datos.
+  
+  El script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) genera los siguientes campos:
+    
+	- `StockCode`: toma aleatoriamente una clave del diccionario en el archivo `metadata_onlineretail.json` generado por el script `generar_metadata.py`
+    - `Quantity`: generado aleatoriamente entre el intervalo de 1 a 10 productos.
+    - `UnitPrice`: referencia su asignación en el valor que se corresponde con la clave asignada para `StockCode`.
+    - `TotalPrice`: resulta del producto de `Quantity` y `UnitPrice`.
+    - `Country`: toma aleatoriamente un elemento de la lista `countries` contenida en el diccionario `metadata_onlineretail.json`.
+    - `InvoiceDate`: asigna la fecha y hora del sistema (formato string) en el instante de ejecución continua de datos del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py).
+  Nota: la ejecución del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) depende de la generación del archivo JSON llamado `metadata_onlineretail.json`.
+  
+  Para iniciar la generación continua de datos se ejecuta en la terminal PuTTY `vboxuser@BIGDATA` el siguiente comando:
+  
+    ```bash
+    python3 Tarea3_kafka_producer.py
+    ```
+  
+  Nota: el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) envia al almacén de datos creado en el Topic `ventas_online`   
 
 
 
