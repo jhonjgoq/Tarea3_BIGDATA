@@ -515,12 +515,26 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     python3 Tarea3_kafka_producer.py
     ```
   
-  Nota: el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) envia al almacén de datos creado en el Topic `ventas_online`   
-
-
-
+  Nota: el script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) envia al almacén de datos (Topic `ventas_online`) los datos en formato JSON.
+  
+  La sesión de la terminal PuTTY donde se ejecutó el script `Tarea3_kafka_producer.py` se mantiene ejecutándose sin cerrarla para simular que se están generando transacciones de ventas online en tiempo real.
+  
+  Nota: para finalizar la ejecución del script `Tarea3_kafka_producer.py` use la combinación de teclas `CTRL + C`.
+  
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
-
+  
+  - Iniciar una nueva sesión de terminal remota PyTTY con la siguiente configuración:
+    - Host Name (or IP address): IP de la máquina virtual. Para esta práctica, como ejemplo se usa `IP: 192.168.0.17`
+    - Login as: `vboxuser`
+	- Password: `bigdata`
+  
+  - Crear un nuevo script Python con empleando el editor nano con el nombre `Tarea3_streaming_consumer.py` con la siguiente instrucción.
+  
+    ```bash
+    nano Tarea3_streaming_consumer.py
+    ```
+  
+  -   
     ```bash
 	spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.8 Tarea3_streaming_consumer.py
 	```
