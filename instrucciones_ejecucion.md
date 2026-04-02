@@ -430,12 +430,13 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     "2344B": 25.67
     }
     ```
-	- Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:  
+	- Para la columna `Country` se genera una lista de los valores únicos, por ejemplo:
 	
     ```json
     ["unit Kingdom", "France", "Germany"]
-    ```		
-
+    ```
+	
+	- En la terminal de la sesión PuTTY `vboxuser@BIGDATA` se requiere instalar el  
 
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
