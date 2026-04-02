@@ -443,6 +443,12 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     pip3 install pandas
     ```
   
+  - Copiar el dataset `online_retail.csv` contenido en la carpeta compartida de la máquina virtual con punto de montaje `/media/sf_comp_bigdata/` empleando el siguiente comando:
+  
+    ```bash
+    cp /media/sf_comp_bigdata/online_retail.csv /home/vboxuser/
+    ```
+   
   - Con el editor de `nano` crear el script `generar_metadata.py` generador del dicionario `metadata_onlineretail.json` en la sesión PuTTY `vboxuser@BIGDATA` usando el comando:
   
     ```bash
