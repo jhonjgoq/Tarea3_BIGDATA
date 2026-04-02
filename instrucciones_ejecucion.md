@@ -360,6 +360,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```
 	**Nota:** esperar al menos 10 segundos antes de iniciar los servicios del servidor Kafka
 	<br> </br>
+---
 - **Paso 2.** **Iniciar el servidor Kafka**\
 	Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
 
@@ -382,8 +383,8 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```
 	
 	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
-  
   <br> </br>
+---  
 - **Paso 3.** **Creación del Topic**\
 	Se requiere construir el canal de comunicación por donde viajan los datos
 	- `--create --topic ventas_online` crea una bandeja de entrada de mensajes llamado `ventas_online`
