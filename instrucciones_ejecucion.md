@@ -421,7 +421,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas.
 		- Las columnas `StockCode` y `UnitPrice` en el archivo JSON se relacionan mediante la estructura clave-valor (key-value) `{StockCode: UnitPrice}`, por ejemplo:  
 		
-	    ```json
+	    ```JSON
         {
         "1234A": 9.45,
         "2344B": 25.67
@@ -433,21 +433,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
         ["unit Kingdom", "France", "Germany"]
         ```		
 
-- **Paso 4.** **Producer:** generación de datos simulados enviados al **Topic**
-    - **Preliminares:** **Creación del diccionario de datos**...
-    
-    Tomando como referencia el dataset `online_retail.csv`...
-    
-    Se procede a generar un diccionario con los valores únicos... Sin embargo, se tienen las siguientes consideraciones:
-        - Las columnas `StockCode` y `UnitPrice` están relacionadas.
-        - Las columnas se relacionan mediante la estructura clave-valor, por ejemplo:
 
-        ```json
-        {
-        "1234A": 9.45,
-        "2344B": 25.67
-        }
-        ```	
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
