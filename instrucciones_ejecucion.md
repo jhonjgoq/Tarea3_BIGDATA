@@ -132,6 +132,16 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```bash
     sudo usermod -aG vboxsf hadoop
     ```
+	- Agregar el usuario `vboxuser` al grupo `vboxsf` para garantizar los permisos de acceso a la carpeta compartida `/media/sf_comp_bigdata`. La contraseña de superusuario es password: `bigdata`
+	<br> </br>
+    ```bash
+    sudo usermod -aG vboxsf vboxuser
+    ```
+	- Se requiere reiniciar la máquina virtual BIGDATA
+	<br> </br>
+    ```bash
+    sudo reboot
+    ```
 - Se verifica el proceso accediendo desde la terminal de la máquina virtual BIGDATA al ditrectorio `/media/sf_comp_bigdata` donde se puede visualizar el dataset `online_retail.csv` con la siguiente instrucción.
 	
     ```bash
@@ -405,7 +415,8 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- Preliminares: **Creación del diccionario de datos** que referencia la simulación de datos aleatorios de ventas online.
 	<br> </br>
 	Tomando como referencia el dataset `online_retail.csv` objeto de estudio obtenido de la carpeta compartida con punto de montaje `/media/sf_comp_bigdata/`, el cual, tenemos una copia en el directorio `/home/vboxuser/`.  
-	Se procede a generar un diccionario con los valores únicos de las columnas `StockCode`, `UnitPrice` y `Country` para referenciar la simulación de un generador de datos aleatorios de ventas online.   
+	Se procede a generar un diccionario con los valores únicos de las columnas `StockCode`, `UnitPrice` y `Country` para referenciar la simulación de un generador de datos aleatorios de ventas online que toma como elementos de dominio las listas con los valores únicos de cada columna. Sin embargo, se tienen las siguientes consideraciones:
+		- Las columnas `StockCode` de código de inventario y `UnitPrice` precio unitario por producto de inventario están relacionadas 
 
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
