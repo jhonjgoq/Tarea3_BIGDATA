@@ -482,6 +482,78 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     nano generar_metadata.py 	
 	```
 
+
+- **Paso 4.** **Producer:** generación de datos simulados enviados al **Topic**
+
+  - **Preliminares:** Creación del diccionario de datos que referencia la simulación de ventas online desde un archivo JSON.
+
+  Tomando como referencia el dataset `online_retail.csv` ubicado en `/home/vboxuser/`, se genera un diccionario con valores únicos de las columnas `StockCode`, `UnitPrice` y `Country`.
+
+  Se tienen las siguientes consideraciones:
+
+  - Las columnas `StockCode` y `UnitPrice` están relacionadas.
+
+  - La relación en el JSON se representa como estructura clave-valor `{StockCode: UnitPrice}`, por ejemplo:
+
+    ```json
+    {
+      "1234A": 9.45,
+      "2344B": 25.67
+    }
+    ```
+
+  - Para la columna `Country` se genera una lista de valores únicos:
+
+    ```json
+    ["United Kingdom", "France", "Germany"]
+    ```
+
+  - En la terminal de PuTTY se instala el paquete `pandas`:
+
+    ```bash
+    pip3 install pandas
+    ```
+
+  - Crear el script con `nano`:
+
+    ```bash
+    nano generar_metadata.py
+    ```
+
+  - Copiar el siguiente código y guardar con `CTRL + O`, luego `ENTER` y salir con `CTRL + X`:
+
+    ```python
+    # Generador del diccionario de ventas online
+
+    import pandas as pd
+    import json
+
+    path = '/home/vboxuser/online_retail.csv'
+
+    df = pd.read_csv(path, encoding='ISO-8859-1')
+
+    df = df.dropna(subset=['StockCode', 'UnitPrice', 'Country'])
+    df = df[df['UnitPrice'] > 0]
+
+    metadata = {
+        "price_by_stockcode": df.groupby('StockCode')['UnitPrice'].mean().round(2).to_dict(),
+        "countries": df['Country'].unique().tolist()
+    }
+
+    with open('metadata_onlineretail.json', 'w') as f:
+        json.dump(metadata, f)
+
+    print("Archivo metadata_onlineretail.json generado correctamente")
+    ```
+
+  - Ejecutar el script:
+
+    ```bash
+    python3 generar_metadata.py
+    ```
+
+
+
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
 
     ```bash
