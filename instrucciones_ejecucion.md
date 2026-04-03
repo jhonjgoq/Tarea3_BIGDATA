@@ -575,6 +575,10 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     nano Tarea3_streaming_consumer.py
     ```
   
+  - Se copia el contenido del archivo [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py) dentro del editor `nano`, luego se procede a guardar con la combinación de teclas `CTRL + O` y se cierra el editor con `CTRL + X`.
+  
+  **Lectura de datos en tiempo real desde el Topic**
+    
   - Ahora se debe iniciar la aplicación de Spark Structured Streaming empleando el script Python [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py), la cual, lee el archivo JSON que recibe el almacén de datos Topic `ventas_online`.
   
     En esta etapa se formaliza el procesamiento en tiempo real incorporando las siguientes dependencias necesarias para cumplir la integración de Streaming con Kafka.
