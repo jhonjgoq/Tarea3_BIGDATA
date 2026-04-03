@@ -57,7 +57,7 @@ ventas_tiempo = df_json \
 # Salida de resultados en la consola
     
 query1 = ventas_tiempo.writeStream \
-    .outputMode("complete") \
+    .outputMode("update") \
     .format("console") \
     .start()
     
