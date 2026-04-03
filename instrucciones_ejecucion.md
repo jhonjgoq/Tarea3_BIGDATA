@@ -539,6 +539,16 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
   
   Nota: la ejecución del script [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) requiere estrictamente de la generación del archivo JSON llamado `metadata_onlineretail.json`.
   
+  Se crea el script en la terminal empleando el editor de texto `nano` con la siguiente instrucción:
+  
+    ```bash
+	nano Tarea3_kafka_producer.py
+	```
+  
+  Una vez abierto, se procede a copiar el contenido del archivo [Tarea3_kafka_producer.py](./Tarea3_kafka_producer.py) en el editor `nano`. Para pegar se realiza clic derecho sobre el editor `nano` en la terminal, luego con `CTRL + O` se guarda el script y se sale del editor con la combinación de teclas `CTRL + X`.
+  
+  **Iniciar la simulación**
+  
   Para iniciar la generación continua de datos se ejecuta en la terminal PuTTY `vboxuser@BIGDATA` el siguiente comando:
   
     ```bash
