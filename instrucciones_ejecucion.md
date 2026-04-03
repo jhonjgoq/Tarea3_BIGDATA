@@ -616,3 +616,27 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	```bash
 	spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.8 Tarea3_streaming_consumer.py
 	```
+  
+- **Paso 5.** **Monitoreo del rendimiento y estados del proceso**
+  
+  Después de ejecutar la aplicación de Spark Structured Streaming, Apache Spark habilita automáticamente una interfaz web de monitoreo accesible a través del puerto `4040`.
+  
+  Se debe acceder a la interfaz gráfica Spark UI desde el navegador web ingresando con la IP de la máquina virtual BIGDATA y el puerto 4040.
+  
+    - http://<IP_DE_LA_MAQUINA>:4040
+  
+    - Ejemplo aplicado: `http://192.168.1.10:4040`  
+  
+  **Nota**: La interfaz web de Spark UI proporciona información en tiempo real sobre la ejecución de la aplicación:
+  
+  - `Jobs`: muestra los trabajos ejecutados por Spark mediante los estados (completado, en ejecución, fallido).
+  
+  - `Stages`: presenta como se dividen los jobs en etapas, lo cual es útil para analizar el rendimiento y los tiempos de ejecución.
+  
+  - `Tasks`: presenta estadísticas de uso de CPU y procesos en paralelo.  
+  
+  - `Structured Streaming`: 
+  
+  - `Storage`: presenta el uso de memoria y uso de psersistencia de datos.
+  
+  - `Environment`: presenta las configuraciones de Spark y las variables del sistema.  
