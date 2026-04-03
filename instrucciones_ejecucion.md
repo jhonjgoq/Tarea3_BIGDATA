@@ -13,7 +13,8 @@
 5. [Instrucciones de ejecución del script Tarea3_batchpy (Análisis con Apache Spark)](#instrucciones-de-ejecución-del-script-tarea3_batchpy-análisis-con-apache-spark)
 
 ### Índice de contenidos: Procesamiento de datos por lotes (Batch)
-
+1. [Requisitos preliminares de instalación y configuración (Spark Kafka y Streaming)](#requisitos-preliminares-de-instalación-y-configuración-spark-kafka-y-streaming)
+2. [Instrucciones de ejecución del procesamiento de datos en tiempo real integrando Kafka y Streaming en Spark](#instrucciones-de-ejecución-del-procesamiento-de-datos-en-tiempo-real-integrando-kafka-y-streaming-en-spark)
 ---
 
 ## Elementos de la práctica BIG DATA Tarea 3 
@@ -242,7 +243,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 ---
 
 ## Instrucciones de ejecución del script Tarea3_batch.py (Análisis con Apache Spark)
-
+  
 - **Paso 1.** Iniciar una sesión PuTTY desde el ejecutable putty.exe con el usuario `vboxuser`
 	- En la ventana PuTTY Configuration agregar la IP de la máquina virtual BIGDATA en el campo Host Name (or IP address)
 		- Para la práctica se uso `Host Name: 192.168.0.17`
@@ -279,7 +280,8 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 		- En la interfaz gráfica se navega por 
 		
 		
-## Requisitos preliminares de configuración (Spark Streaming y Kafka)
+## Requisitos preliminares de instalación y configuración (Spark Kafka y Streaming)
+  
 - **Paso 1.** Se inicia una sesión de terminal remota con PuTTY con las siguientes configuraciones:
 	- Host Name (or IP address) = `IP de la máquina virtual BIGDATA`\
 	Para esta práctica se utiliza `IP = 192.168.0.17`
@@ -325,7 +327,7 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```
 	Nota: no olvidar que la contraseña de super usuario es password: `bigdata`
 	
-## Instrucciones de ejecución del flujo operacional de Streaming para Big Data (script Tarea3_kafka_producer.py y Tarea3_streaming_consumer.py)
+## Instrucciones de ejecución del procesamiento de datos en tiempo real integrando Kafka y Streaming en Spark
 	
 **Resumen del flujo operacional de Streaming para Big Data**
 	
