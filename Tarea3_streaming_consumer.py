@@ -51,7 +51,8 @@ ventas_tiempo = df_json \
         window("InvoiceDate", "10 seconds"),
         col("Country")
     ) \
-    .agg(round(sum("TotalPrice"), 2).alias("Ventas"))
+    .agg(round(sum("TotalPrice"), 2).alias("Ventas"))\
+    .orderBy(col("window"))
     
 #------------------------------------------
 # Salida de resultados en la consola
