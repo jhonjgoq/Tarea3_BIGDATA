@@ -552,7 +552,24 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	  ```bash
       spark-submit --version
       ```
-
+    Como resultado ejemplo de la consulta se puede visualizar:
+      ```bash
+	  vboxuser@BIGDATA:~$ spark-submit --version
+      Welcome to
+          ____              __
+         / __/__  ___ _____/ /__
+        _\ \/ _ \/ _ `/ __/  '_/
+       /___/ .__/\_,_/_/ /_/\_\   version 3.5.8
+          /_/
+        
+      Using Scala version 2.12.18, OpenJDK 64-Bit Server VM, 11.0.30
+      Branch HEAD
+      Compiled by user runner on 2026-01-12T04:16:44Z
+      Revision 5a48a37b2dbd7b51e3640cd1d947438459556cc6
+      Url https://github.com/apache/spark
+      Type --help for more information.
+	  ```
+  
   - Para ejecutar el procesamiento de datos en tiempo real con Spark Structured Streaming empleando el script [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py) en la terminal se introduce el siguiente comando: 	
         
 	```bash
