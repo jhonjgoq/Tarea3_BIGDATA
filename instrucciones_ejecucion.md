@@ -523,7 +523,8 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
   La sesión de la terminal PuTTY donde se ejecutó el script `Tarea3_kafka_producer.py` se mantiene ejecutándose sin cerrarla para simular que se están generando transacciones de ventas online en tiempo real.
   
   Nota: para finalizar la ejecución del script `Tarea3_kafka_producer.py` use la combinación de teclas `CTRL + C`.
-  
+  <br> </br>
+---  
 - **Paso 5.** **Consumer:** lectura de datos simulados desde el **Topic**
   
   - Iniciar una nueva sesión de terminal remota PyTTY con la siguiente configuración:
@@ -531,20 +532,29 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     - Login as: `vboxuser`
 	- Password: `bigdata`
   
-  - Crear un nuevo script Python con empleando el editor nano con el nombre `Tarea3_streaming_consumer.py` con la siguiente instrucción.
+  - Crear un nuevo script Python empleando el editor nano con el nombre `Tarea3_streaming_consumer.py` con la siguiente instrucción.
   
     ```bash
     nano Tarea3_streaming_consumer.py
     ```
   
-  -   
-    ```bash
+  - Ahora se debe iniciar la aplicación de Spark Structured Streaming empleando el script Python [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py), la cual, lee el archivo JSON que recibe el almacén de datos Topic `ventas_online`.
+  
+    En esta etapa se formaliza el procesamiento en tiempo real incorporando las siguientes dependencias necesarias para cumplir la integración de Streaming con Kafka.
+  
+    - `spark-submit`: permite lanzar una aplicación a un clúster de Spark para gestionar recursos y dependencias.
+    - `--packages`: especifica a Spark que debe descargar automáticamente dependencias externas necesarias desde Maven Central en la integración.
+    - `spark-sql-kafka-0-10`: es el conector	específico que permite a Spark Structured Streaming pueda leer los datos de Kafka.
+	- `2.12`: referencia la versión de Scala con la que se realiza la compilación.
+	- `3.5.8`: especifica la versión de Spark que se está utilizando.
+	- Nota: para identificar la versión de Spark y Scala se puede consultar en la terminal bash como sigue:
+        
+		```bash
+        spark-submit --version
+        ```
+
+  - Para ejecutar el procesamiento de datos en tiempo real con Spark Structured Streaming empleando el script [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py) en la terminal se introduce el siguiente comando: 	
+        
+	```bash
 	spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.8 Tarea3_streaming_consumer.py
 	```
-
-
-/opt/Kafka/bin/kafka-topics.sh --create \
---topic ventas_online \
---bootstrap-server localhost:9092 \
---partitions 1 \
---replication-factor 1
