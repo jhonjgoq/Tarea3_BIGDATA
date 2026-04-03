@@ -48,7 +48,7 @@ df_json = df_json.withColumn(
 ventas_tiempo = df_json \
     .withWatermark("InvoiceDate", "1 minute") \
     .groupBy(
-        window("InvoiceDate", "5 seconds"),
+        window("InvoiceDate", "10 seconds"),
         col("Country")
     ) \
     .agg(round(sum("TotalPrice"), 2).alias("Ventas"))
@@ -57,7 +57,7 @@ ventas_tiempo = df_json \
 # Salida de resultados en la consola
     
 query1 = ventas_tiempo.writeStream \
-    .outputMode("update") \
+    .outputMode("complete") \
     .format("console") \
     .start()
     
