@@ -43,16 +43,16 @@ df_json = df_json.withColumn(
     to_timestamp("InvoiceDate", "yyyy-MM-dd HH:mm:ss")
 )
 
-#------------------------------------------
-#Análisis 1: Ventas por país en tiempo real
-ventas_pais = df_json.groupBy("Country") \
-    .agg(round(sum("TotalPrice"), 2).alias("TotalSales"))
+##------------------------------------------
+##Análisis 1: Ventas por país en tiempo real
+#ventas_pais = df_json.groupBy("Country") \
+#    .agg(round(sum("TotalPrice"), 2).alias("TotalSales"))
     
-#------------------------------------------
-#Análisis 2: Productos más vendidos
-top_productos = df_json.groupBy("StockCode") \
-    .agg(sum("Quantity").alias("TotalQuantity")) \
-    .orderBy(col("TotalQuantity").desc())
+##------------------------------------------
+##Análisis 2: Productos más vendidos
+#top_productos = df_json.groupBy("StockCode") \
+#    .agg(sum("Quantity").alias("TotalQuantity")) \
+#    .orderBy(col("TotalQuantity").desc())
     
 #------------------------------------------
 #Análisis 3: Ventas por ventana de tiempo (cada 5 segundos)
@@ -66,15 +66,15 @@ ventas_tiempo = df_json \
     
 #------------------------------------------
 # Salida de resultados en la consola
-query1 = ventas_pais.writeStream \
-    .outputMode("complete") \
-    .format("console") \
-    .start()
+#query1 = ventas_pais.writeStream \
+#    .outputMode("complete") \
+#    .format("console") \
+#    .start()
 
-query2 = top_productos.writeStream \
-    .outputMode("complete") \
-    .format("console") \
-    .start()
+#query2 = top_productos.writeStream \
+#    .outputMode("complete") \
+#    .format("console") \
+#    .start()
     
 query3 = ventas_tiempo.writeStream \
     .outputMode("update") \
