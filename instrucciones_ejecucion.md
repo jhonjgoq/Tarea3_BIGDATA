@@ -549,9 +549,9 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 	- `3.5.8`: especifica la versión de Spark que se está utilizando.
 	- Nota: para identificar la versión de Spark y Scala se puede consultar en la terminal bash como sigue:
         
-		```bash
-        spark-submit --version
-        ```
+	  ```bash
+      spark-submit --version
+      ```
 
   - Para ejecutar el procesamiento de datos en tiempo real con Spark Structured Streaming empleando el script [Tarea3_streaming_consumer.py](./Tarea3_streaming_consumer.py) en la terminal se introduce el siguiente comando: 	
         
