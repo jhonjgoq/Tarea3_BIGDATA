@@ -629,14 +629,18 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
   
   **Nota**: La interfaz web de Spark UI proporciona información en tiempo real sobre la ejecución de la aplicación:
   
-  - `Jobs`: muestra los trabajos ejecutados por Spark mediante los estados (completado, en ejecución, fallido).
+  - Pestaña `Jobs`: muestra los trabajos ejecutados por Spark mediante los estados (completado, en ejecución, fallido).
   
-  - `Stages`: presenta como se dividen los jobs en etapas, lo cual es útil para analizar el rendimiento y los tiempos de ejecución.
+  - Pestaña `Stages`: presenta como se dividen los jobs en etapas, lo cual es útil para analizar el rendimiento y los tiempos de ejecución.
   
-  - `Tasks`: presenta estadísticas de uso de CPU y procesos en paralelo.  
+  - Pestaña `Tasks`: presenta estadísticas de uso de CPU y procesos en paralelo.  
   
-  - `Structured Streaming`: 
+  - Pestaña `Structured Streaming`: presenta una tabla de consultas activas (queries), al hacer clic en una consulta se puede visualizar métricas en tiempo real.
+     
+	- **Input Rate:** especifica la velocidad con la que llegan los datos desde el Topic `ventas_online`.
+    - **Process Rate:** presenta la velocidad a la que se están procesando los datos en Spark.
+    - **Batch Duration:** indica cuánto tiempo tarda en procesar cada micro lote, lo que permite estudiar el rendimiento del procesamiento.	
   
-  - `Storage`: presenta el uso de memoria y uso de psersistencia de datos.
+  - Pestaña `Storage`: presenta el uso de memoria y uso de psersistencia de datos.
   
-  - `Environment`: presenta las configuraciones de Spark y las variables del sistema.  
+  - Pestaña `Environment`: presenta las configuraciones de Spark y las variables del sistema.  
