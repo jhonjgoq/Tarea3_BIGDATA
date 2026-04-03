@@ -339,62 +339,73 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
 | 4 | `Producer` | envía datos al Topic |
 | 5 | `Consumer` | lee los datos del Topic |
 	
-- **Paso 1.** **Iniciar servicios ZooKeeper**\ 
-	Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para encender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
-	
+- **Paso 1.** **Iniciar servicios ZooKeeper**
+   
+  Se requiere iniciar el servidor ZooKeeper en segundo plano para gestionar el estado del clúster, configuraciones e identificar que servidores (brokers) están activos. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `zookeeper-server-start.sh` para encender los servicios, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `zookeeper.properties`. 	
+  
     ```bash
     sudo /opt/Kafka/bin/zookeeper-server-start.sh /opt/Kafka/config/zookeeper.properties &
     ```
-	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
+  
+  Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
 	
-- **Paso 1.2.** **Verificar servicios activos de ZooKeeper**\
-	Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.
-	
+- **Paso 1.2.** **Verificar servicios activos de ZooKeeper**
+  
+  Para verificar que los servicios iniciados por `zookeeper-server-start.sh` están activos se debe verificar que el proceso interno de Zookeper denominado `QuorumPeerMain` está activo se usa `jps` como sigue en bash.
+  	
     ```bash
     sudo jps
     ```
-	Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper está activo:
 	
+  Resultado ejemplo en la terminal después de aplicar `sudo jps`, donde `QuorumPeerMain` garantiza que ZooKeeper está activo:
+  
     ```bash
     vboxuser@BIGDATA:~$ sudo jps
     2144 Jps
     1721 QuorumPeerMain
     ```
-	**Nota:** esperar al menos 10 segundos antes de iniciar los servicios del servidor Kafka
-	<br> </br>
+  **Nota:** esperar al menos 10 segundos antes de iniciar los servicios del servidor Kafka
+  <br> </br>
 ---
-- **Paso 2.** **Iniciar el servidor Kafka**\
-	Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
-
+  
+- **Paso 2.** **Iniciar el servidor Kafka**
+  
+  Se requiere iniciar el servidor (Broker) de Kafka en segundo plano para activar el servicio del motor de mensajería. Dentro del directorio `/opt/Kafka/bin` se debe iniciar el script `kafka-server-start.sh` para encender el servicio Kafka, y dentro del directorio `/opt/Kafka/config/` se debe iniciar las configuraciones registradas en `server.properties`.
+  
     ```bash
     sudo /opt/Kafka/bin/kafka-server-start.sh /opt/Kafka/config/server.properties &
     ```
-- **Paso 2.1.** **Verificar servicios activos de Kafka**\
-	Para verificar que los servicios iniciados por `kafka-server-start.sh` están activos se debe verificar que el proceso interno de Kafka denominado `Kafka` está activo se usa `jps` como sigue en bash.
-	
+  
+- **Paso 2.1.** **Verificar servicios activos de Kafka**
+  
+  Para verificar que los servicios iniciados por `kafka-server-start.sh` están activos se debe verificar que el proceso interno de Kafka denominado `Kafka` está activo se usa `jps` como sigue en bash.
+  
     ```bash
     sudo jps
     ```
-	Resultado ejemplo en la terminal después de aplicar `sudo jps`, permite confirmar que `QuorumPeerMain` y `Kafka` están activos:
-	
+  
+  Resultado ejemplo en la terminal después de aplicar `sudo jps`, permite confirmar que `QuorumPeerMain` y `Kafka` están activos:
+  
     ```bash
     vboxuser@BIGDATA:~$ sudo jps
     4050 QuorumPeerMain
     4963 Jps
     4493 Kafka
     ```
-	
-	Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
+  
+  Nota: cuando los procesos de la terminal han concluido se requiere pulsar la tecla Intro para que aparezca de nuevo el prompt de la terminal.
   <br> </br>
 ---  
+  
 - **Paso 3.** **Creación del Topic**\
-	Se requiere construir el canal de comunicación por donde viajan los datos
-	- `--create --topic ventas_online` crea una bandeja de entrada de mensajes llamado `ventas_online`
-	- `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `ventas_online`
-	- `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
-	- `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
-	Con la instrucción a continuación en bash se construye el almacen de mensajes
-	<br> </br>
+  Se requiere construir el canal de comunicación por donde viajan los datos
+    - `--create --topic ventas_online` crea una bandeja de entrada de mensajes llamado `ventas_online`
+    - `--bootstrap-server localhost:9092` especifica la dirección del servidor kafka que debe conectarse para crear el Topic `ventas_online`
+    - `--partitions 1` particiones que debe crear Kafka para procesar los datos en paralelo. 
+    - `--replication-factor 1` especifica el número de copias de seguridad de los datos. La asignación depende del número de servidores (Broker). 
+  
+  Con la instrucción a continuación en bash se construye el almacen de mensajes
+  
     ```bash
     /opt/Kafka/bin/kafka-topics.sh --create \
     --topic ventas_online \
@@ -402,15 +413,17 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     --partitions 1 \
     --replication-factor 1
     ```
-	Para comprobar que el Topic `ventas_online` ha sido creado se ejecuta en la terminal el siguiente comando:
-	
+  
+  Para comprobar que el Topic `ventas_online` ha sido creado se ejecuta en la terminal el siguiente comando:
+  
     ```bash
     /opt/Kafka/bin/kafka-topics.sh --describe \
     --topic ventas_online \
     --bootstrap-server localhost:9092
     ```
-	Como resultado se presenta una descripción detallada del Topic, por ejemplo:
-	
+  
+  Como resultado se presenta una descripción detallada del Topic, por ejemplo:
+  
     ```bash
     vboxuser@BIGDATA:~$ /opt/Kafka/bin/kafka-topics.sh --describe --topic ventas_online --bootstrap-server localhost:9092
     Topic: ventas_online    TopicId: 5irB-iuPSKOrf6tDlKhuXw PartitionCount: 1      ReplicationFactor: 1     Configs:
@@ -418,7 +431,9 @@ Como resultado se tiene que la descarga del dataset (online_retail.csv) está al
     ```
   <br> </br>
 ---
+  
 - **Paso 4.** **Producer:** generación de datos simulados envíados al **Topic**
+  
   - **Preliminares:** **Creación del diccionario de datos** que referencia la simulación de datos aleatorios de ventas online desde un archivo JSON.
   
   Tomando como referencia el dataset `online_retail.csv` objeto de estudio obtenido de la carpeta compartida con punto de montaje `/media/sf_comp_bigdata/`, el cual, tenemos una copia en el directorio `/home/vboxuser/`.
